@@ -1,0 +1,915 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-control-plane
+  namespace: kuma-system
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  annotations:
+    helm.sh/hook: pre-install
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-patch-ns-job
+  namespace: kuma-system
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  annotations:
+    helm.sh/hook: pre-delete
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-pre-delete-job
+  namespace: kuma-system
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  annotations:
+    helm.sh/hook: pre-upgrade
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
+    helm.sh/hook-weight: "-1"
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-install-missing-crds
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-control-plane
+  namespace: kuma-system
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    helm.sh/hook: pre-install
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-patch-ns-job
+  namespace: kuma-system
+rules:
+- apiGroups:
+  - ""
+  resourceNames:
+  - kuma-system
+  resources:
+  - namespaces
+  verbs:
+  - get
+  - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-control-plane
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  - pods
+  - configmaps
+  - nodes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - services
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+- apiGroups:
+  - kuma.io
+  resources:
+  - dataplanes
+  - dataplaneinsights
+  - meshes
+  - zones
+  - zoneinsights
+  - zoneingresses
+  - zoneingressinsights
+  - meshinsights
+  - serviceinsights
+  - proxytemplates
+  - ratelimits
+  - trafficpermissions
+  - trafficroutes
+  - timeouts
+  - retries
+  - circuitbreakers
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - kuma.io
+  resources:
+  - externalservices
+  - faultinjections
+  - healthchecks
+  - trafficlogs
+  - traffictraces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - pods/finalizers
+  verbs:
+  - '*'
+- apiGroups:
+  - kuma.io
+  resources:
+  - meshes/finalizers
+  verbs:
+  - '*'
+- apiGroups:
+  - kuma.io
+  resources:
+  - dataplanes/finalizers
+  verbs:
+  - '*'
+- apiGroups:
+  - authentication.k8s.io
+  resources:
+  - tokenreviews
+  verbs:
+  - create
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    helm.sh/hook: pre-upgrade
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
+    helm.sh/hook-weight: "-1"
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-install-missing-crds
+rules:
+- apiGroups:
+  - apiextensions.k8s.io
+  resources:
+  - customresourcedefinitions
+  verbs:
+  - create
+  - list
+  - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    helm.sh/hook: pre-delete
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-pre-delete-job
+rules:
+- apiGroups:
+  - admissionregistration.k8s.io
+  resourceNames:
+  - kuma-validating-webhook-configuration
+  resources:
+  - validatingwebhookconfigurations
+  verbs:
+  - delete
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: kuma-control-plane
+  namespace: kuma-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: kuma-control-plane
+subjects:
+- kind: ServiceAccount
+  name: kuma-control-plane
+  namespace: kuma-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    helm.sh/hook: pre-install
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-patch-ns-job
+  namespace: kuma-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: kuma-patch-ns-job
+subjects:
+- kind: ServiceAccount
+  name: kuma-patch-ns-job
+  namespace: kuma-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-control-plane
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: kuma-control-plane
+subjects:
+- kind: ServiceAccount
+  name: kuma-control-plane
+  namespace: kuma-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    helm.sh/hook: pre-upgrade
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
+    helm.sh/hook-weight: "-1"
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-install-missing-crds
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: kuma-install-missing-crds
+subjects:
+- kind: ServiceAccount
+  name: kuma-install-missing-crds
+  namespace: kuma-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    helm.sh/hook: pre-delete
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-pre-delete-job
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: kuma-pre-delete-job
+subjects:
+- kind: ServiceAccount
+  name: kuma-pre-delete-job
+  namespace: kuma-system
+---
+apiVersion: v1
+data:
+  config.yaml: |
+    # use this file to override default configuration of `kuma-cp`
+    #
+    # see conf/kuma-cp.conf.yml for available settings
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-control-plane-config
+  namespace: kuma-system
+---
+apiVersion: v1
+data:
+  install_missing_crds.sh: |
+    #!/usr/bin/env sh
+
+    if [ -s /kuma/missing/crds.yaml ]; then
+      echo "/kuma/missing/crds.yaml found and is not empty, adding crds"
+      kubectl create -f /kuma/missing/crds.yaml
+    else
+      echo "/kuma/missing/crds.yaml not found or empty, it looks like there is no missing crds"
+    fi
+  save_missing_crds.sh: |
+    #!/usr/bin/env sh
+
+    missing_crds="$(kumactl install crds --only-missing)"
+
+    if [ -n "${missing_crds}" ]; then
+      echo "found missing crds - saving to /kuma/missing/crds.yaml"
+      echo "${missing_crds}" > /kuma/missing/crds.yaml
+    fi
+kind: ConfigMap
+metadata:
+  annotations:
+    helm.sh/hook: pre-upgrade
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
+    helm.sh/hook-weight: "-1"
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-install-missing-crds-scripts
+  namespace: kuma-system
+---
+apiVersion: v1
+data:
+  ca.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lSQU9xYmp0QUI0WFFJQjdYdmJza0d2M1l3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEEzTURnd01UUTNNemxhRncwek1UQTNNRFl3TVRRMwpNemxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFDWkxjaFdQM2RXOEszamtVUTQzRUJ4Z3ppV2FUTThGT3NjUUlORFlmVWpBTXFHRTRhc2NjenMKMDVNM2FCQjRCK2ZMWEZrZXowbEhnSytGa0ZVa0NKQnJheHZxYmJEc0U5RkU1eUdCZlJqbzJOMkpob3h1eEFDVgo2dlJIK1F5blU4ZzJkWUFEL3BaTXVHQTZFdEJFNHA1WTVyN3paR2pNRVlkdm9qMHpwREhCdHhWV0JMbkZjeVFyCkt3M2dFYlNvbndhVWZ3R3lSeTBRdFBsZHBscGM1eDZrZGI5Sy92bGNPK1BKamFGTjNudE5kUzJXWG9FV0l0eVEKS291VnVxUjFRclZJT2Jjd21jTzhPZHdlK2pBNnNPalk3ZWRTaHRHeVdtUzh5dFYvWFdBNXFXK1d4NkJpb1lVZAowOENmNzU4L3BWWWdKVDZFRGZDbmhXQmpnUW9qbXJDdkFnTUJBQUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDCnBEQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVWdlUWxEcEJMZ0g3NG9DTXhYTjJLdGc4dXR2OHdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQURMcXFtTWdnK3MyYWlsRjFSQjJ2NUpPelllZENIdTNteE1LRUxibGExSGcrdWhMZVV2c3pWNXBjSlkvCldvRzdkRVdTUEVDc1N2bUFJcHYrTVBFUnhLSU53aTh6K21Ucyt6M2hhd1RMd1crTnhONVB5bis2Q1BvNUFLRS8KWTlkbWlETGhRL0ZlRm9XNVhhV2ZpWlN1WlB5NlRUa0xGVGdTdVY3TkppVHhVSjVLbTVTTEFoWUFidDJzcWFOaApIZ1ByOUNjTnN0dnRLVyt6V0pWaHBaNFNpckdVM0lxNWxpOTkxTGxSTTNkSU5nWnNENlVoVjAvWlcvUXJOMU14CkhVRU5GanJJQnFzYWFHd2Q1TVhnZW9QL20vd2R0MTdoT1FrSzNHNmxTUThEYkw5QlpuZU5CaTdwT1o0QnNkOVAKQWYwa2l6VmVFK2I2cU9yc1ZXbjVNdE9wN2d3PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURhakNDQWxLZ0F3SUJBZ0lRRWZxbFo1L3JOQllMcGtiZjNZZ0VpakFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGN3T0RBeE5EY3pPVm9YRFRNeE1EY3dOakF4TkRjegpPVm93SFRFYk1Ca0dBMVVFQXhNU2EzVnRZUzFqYjI1MGNtOXNMWEJzWVc1bE1JSUJJakFOQmdrcWhraUc5dzBCCkFRRUZBQU9DQVE4QU1JSUJDZ0tDQVFFQTJUcXRla2RSTmRHRDh3TTdBOVNqRE5XdHhkVTkrUGRpdmpReDd0a1AKbmxlY2hjSm5iM3FCck1iS2czeS9vWGdyaFZFVjRzOGtheFF5ZDByL1BXMmxOcExqT0tRT0xjTXArb3FSeU1tZApVSDIyNUlQcXJHeVBHeHR4OW5telQ3T2VSYkFkU2FjOTRWVDhLV3JOUW9PZjRSMHJwakxJbDJTYVFhdW0wejV5CmgzL3dMSFdvMk1mL3JlTnBMTkFTSGszeVFTR0dLblFGdDhxQ2cwMHNjYU1YS0VjOUlMWmQwT1RMQjg5SVp2QXAKdDBMWkJEaWdwTVpsSW4rSGpQdjlHYnVDZ09iWU5heFZ6ZEc5M0V5N1c3TU03OHNIT3daRXJYVUFrQ0xsRmJsNgpFNUd0QU1uMXhsVDlLZHRKQ3YvSXI5bk1lYXlWa0I4RHU5em01enFxcm85eHd3SURBUUFCbzRHd01JR3RNQTRHCkExVWREd0VCL3dRRUF3SUZvREFkQmdOVkhTVUVGakFVQmdnckJnRUZCUWNEQVFZSUt3WUJCUVVIQXdJd0RBWUQKVlIwVEFRSC9CQUl3QURBZkJnTlZIU01FR0RBV2dCU0I1Q1VPa0V1QWZ2aWdJekZjM1lxMkR5NjIvekJOQmdOVgpIUkVFUmpCRWdoNXJkVzFoTFdOdmJuUnliMnd0Y0d4aGJtVXVhM1Z0WVMxemVYTjBaVzJDSW10MWJXRXRZMjl1CmRISnZiQzF3YkdGdVpTNXJkVzFoTFhONWMzUmxiUzV6ZG1Nd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFEamEKQVhhSkorUUU4TnNWMko0cUUvK2twSGI2ZFpjcFZNTHY5OG9SQzFKai9mdHJRMHo2M1hKdTRtU0tySDlIenRSVgpEbzZlaXd1d1ZVR0ZpTXRQMTU3Kzl3QlN0eVR5UjFiekkzVFI0LzRSRzV3VDF1dFA4ZlZaQWJxaGlQT2hidyt2CnZLOGFSdGd4SURmcHM0d280Y0dxeUtBTlcrMXhwci9pUWpCaXQxcDlLOTNjbDdpRmhZdDJIMnZianVKVkhuVlIKRW4wWUR0WFVGU2tGZU1Ec3RjcSs5dEdHVGZXWGtoa0xLTGdFV01JNVB0bFZubTg1dWtiT2RrbnFuN3I3K2FFQQpIY2tLV0tCRjFKMnlra0JjcGlONW5wdm1uN2EyYTAySXRNeEZmdnFhSWo0Rkg3NUFNWjlCOFZTWElhcDZ6R1BjClBYUHZVcThxQzFMamRLMEkrTzg9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+  tls.key: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcEFJQkFBS0NBUUVBMlRxdGVrZFJOZEdEOHdNN0E5U2pETld0eGRVOStQZGl2alF4N3RrUG5sZWNoY0puCmIzcUJyTWJLZzN5L29YZ3JoVkVWNHM4a2F4UXlkMHIvUFcybE5wTGpPS1FPTGNNcCtvcVJ5TW1kVUgyMjVJUHEKckd5UEd4dHg5bm16VDdPZVJiQWRTYWM5NFZUOEtXck5Rb09mNFIwcnBqTElsMlNhUWF1bTB6NXloMy93TEhXbwoyTWYvcmVOcExOQVNIazN5UVNHR0tuUUZ0OHFDZzAwc2NhTVhLRWM5SUxaZDBPVExCODlJWnZBcHQwTFpCRGlnCnBNWmxJbitIalB2OUdidUNnT2JZTmF4VnpkRzkzRXk3VzdNTTc4c0hPd1pFclhVQWtDTGxGYmw2RTVHdEFNbjEKeGxUOUtkdEpDdi9JcjluTWVheVZrQjhEdTl6bTV6cXFybzl4d3dJREFRQUJBb0lCQUQ2TXhkMGE0Z2lFTHVGdgp3Yk9GcS9tTEljR0FlSnJTNlN6cHJLTWcvMzFScnZGWkhCMmVnZTUxUTJUL0s5TGIzblJCOS9KYVFSdFFNb1BsCkpYL1RyYW44Tzg5WWRmaTVaTUlPMnBHZGRGMzBCUkRoNTFZRTRHUW16L2J2N2pENkFJNENlengxR3IxaWtrVisKeW1IbnNzYklkb1FoeFY3S2loeDB4OUcxL3BhRE9WSXlFQ25jT3Vjdnl2b25TTlhTQ0dHVENRSGgwUWszTUE4SQp1djYyTVFmWUFOZzFqNjJRZFBxUHlHVXJYakpPNG9lMHdpQWRsbjk4eGgwVGZwdU9vOFpQWmZ4NCtWTjZid0h0CnoyOHlxWmQ1Y0hlNTR1bUtadVIzUVQ5ancrbFlXU1JyM0VzeXNFT2pyYklmQ2crVkJDbUtpS0oxWnFGZHB5dXIKL0t0QW5JRUNnWUVBM0o1dmluZzlEZ3liWS8xTWk1Tk1LRGJ4b1NkR2pDMmhvYUFDMmRoNFFPQjJaYjQ3N1NkagpEbUVLUDR0TklPSjB4YXB3ZDAxR2RIUUl5R3o3YzNIcno0ZndYL2cxUWtjYWIvMVV4V2dyS1pCMWpwVklHTDBRCk5oMytFRUhFaGRzbmxJcitlcGsrK3hlU3VkN1VTM2gvb3R2WUlQbDlVT3pueGtFbDdtSjBjOEVDZ1lFQS9CRVQKNlFLbUNiZVo1ckRBWWNCTGtpQi9SaEF0RWFPTlF2Y3F4S3JDZHlFdUVkWTNVVzZXdDBDRGxJdW4reVhWRStZZAp0YXNEd0NmWXlyMUdqaGRBUElSSDlKS0NkZkNkSkl0dTFUUVAzR1hSWWNsdC9UbnFnTDZuSmZGUUk1NGtDUU1ICk9vKzhrMzRDbUpBU2FzV2FIWHNzWm1tSjJUNVVMUDA5TXBudHRvTUNnWUVBMk1tN0UxY3ByN2VGcmxDR09oVW8KM2M5M3lvSzhtUnh4Mms5UTNkNFA5TGhjdjRlYWZXU1p1dFJ5YkpTbTJxeU1VSHcxL1pWcXFSNG9UMEtBS0NZRwpzU3lFY05tSEJEUzRidG1CeG1XaEhEdSt1TGhLV3p6VlJFaGVrbno5N3dhMk13b09IRXlnRGI1UlNPSUV2SkNRCjQyaWlUV3k3enB5cytDeW1hRVJJNkVFQ2dZRUF1NnlQY1c2YVp5Ty9QNmFjSm12QkdIUi9ybysrcnFKaU85akIKakJwRG5lVWpZdjVtdzRlZVNhU01FMTZEM0pkSGRZQmc0SEVLNHRnSUxyTU1SQ0VGbjhreHRlUWJwR3BZNWV1Mgp3cUQzcWpaWTFnRGVscXEzY2RJQnExdG5PbzIwOE16RFpoTzg2T2ZxVU9MOEEybEtuT2Fub1R5MCtQM1NPSWo0Ck5xT3EvTGNDZ1lBaWVtMUdxdnNxS0NrZjJPQklBcThHQWdyNG56RFBxNlA2OWRyZTlQWG05VXRVSXd6RE0xSUoKM1hvWDZBeXBSZ2lTTUs1OGwrZ2ZUNm4ySE52S1JoT1ZxY2VQMXIyTHgvRThZV3NvcCtoalFlUXpsY0NKQUVzSQoyQUNNNVlURzdkRDk5Y0tTM3owNzJJczJzcUJmNUlMTlp4S090V0I4S2EvbVRSelcwSzgzWkE9PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo=
+kind: Secret
+metadata:
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-tls-cert
+  namespace: kuma-system
+type: kubernetes.io/tls
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    prometheus.io/port: "5680"
+    prometheus.io/scrape: "true"
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-control-plane
+  namespace: kuma-system
+spec:
+  ports:
+  - name: http-api-server
+    port: 5681
+  - name: https-api-server
+    port: 5682
+  - name: https-admission-server
+    port: 443
+    targetPort: 5443
+  selector:
+    app: kuma-control-plane
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/name: kuma
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: null
+  name: kuma-global-zone-sync
+  namespace: kuma-system
+spec:
+  ports:
+  - name: global-zone-sync
+    port: 5685
+  selector:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/name: kuma
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: kuma-control-plane
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-control-plane
+  namespace: kuma-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kuma-control-plane
+      app.kubernetes.io/instance: kuma
+      app.kubernetes.io/name: kuma
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      annotations:
+        checksum/config: adc29c508fd46e84eec9d28d4927e2b3be0ba37de5cc6baef28f5e0246fafa55
+        checksum/tls-secrets: bbfdd63bd4dff47fbb4c01cbab631f21e57195dd2f220d8fc885c838d8852c35
+      labels:
+        app: kuma-control-plane
+        app.kubernetes.io/instance: kuma
+        app.kubernetes.io/name: kuma
+    spec:
+      containers:
+      - args:
+        - run
+        - --log-level=info
+        - --config-file=/etc/kuma.io/kuma-control-plane/config.yaml
+        env:
+        - name: KUMA_API_SERVER_READ_ONLY
+          value: "true"
+        - name: KUMA_DEFAULTS_SKIP_MESH_CREATION
+          value: "false"
+        - name: KUMA_DP_SERVER_HDS_ENABLED
+          value: "false"
+        - name: KUMA_ENVIRONMENT
+          value: kubernetes
+        - name: KUMA_GENERAL_TLS_CERT_FILE
+          value: /var/run/secrets/kuma.io/tls-cert/tls.crt
+        - name: KUMA_GENERAL_TLS_KEY_FILE
+          value: /var/run/secrets/kuma.io/tls-cert/tls.key
+        - name: KUMA_INJECTOR_INIT_CONTAINER_IMAGE
+          value: docker.io/kumahq/kuma-init:1.2.1
+        - name: KUMA_MODE
+          value: global
+        - name: KUMA_RUNTIME_KUBERNETES_ADMISSION_SERVER_CERT_DIR
+          value: /var/run/secrets/kuma.io/tls-cert
+        - name: KUMA_RUNTIME_KUBERNETES_ADMISSION_SERVER_PORT
+          value: "5443"
+        - name: KUMA_RUNTIME_KUBERNETES_CONTROL_PLANE_SERVICE_NAME
+          value: kuma-control-plane
+        - name: KUMA_RUNTIME_KUBERNETES_INJECTOR_CA_CERT_FILE
+          value: /var/run/secrets/kuma.io/tls-cert/ca.crt
+        - name: KUMA_RUNTIME_KUBERNETES_INJECTOR_CNI_ENABLED
+          value: "false"
+        - name: KUMA_RUNTIME_KUBERNETES_INJECTOR_SIDECAR_CONTAINER_IMAGE
+          value: docker.io/kumahq/kuma-dp:1.2.1
+        - name: KUMA_STORE_KUBERNETES_SYSTEM_NAMESPACE
+          value: kuma-system
+        - name: KUMA_STORE_TYPE
+          value: kubernetes
+        image: docker.io/kumahq/kuma-cp:1.2.1
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          httpGet:
+            path: /healthy
+            port: 5680
+        name: control-plane
+        ports:
+        - containerPort: 5681
+        - containerPort: 5682
+        - containerPort: 5443
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 5680
+        resources:
+          requests:
+            cpu: 500m
+            memory: 256Mi
+        volumeMounts:
+        - mountPath: /var/run/secrets/kuma.io/tls-cert
+          name: general-tls-cert
+          readOnly: true
+        - mountPath: /etc/kuma.io/kuma-control-plane
+          name: kuma-control-plane-config
+          readOnly: true
+      nodeSelector:
+        kubernetes.io/arch: amd64
+        kubernetes.io/os: linux
+      serviceAccountName: kuma-control-plane
+      volumes:
+      - name: general-tls-cert
+        secret:
+          secretName: kuma-tls-cert
+      - configMap:
+          name: kuma-control-plane-config
+        name: kuma-control-plane-config
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    helm.sh/hook: pre-delete
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
+    helm.sh/hook-weight: "5"
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-delete-webhook
+  namespace: kuma-system
+spec:
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: kuma
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: kuma
+        app.kubernetes.io/version: 1.2.1
+        helm.sh/chart: kuma-0.6.1
+      name: kuma-delete-webhook
+    spec:
+      containers:
+      - command:
+        - kubectl
+        - delete
+        - ValidatingWebhookConfiguration
+        - kuma-validating-webhook-configuration
+        image: bitnami/kubectl:1.20
+        name: pre-delete-job
+      nodeSelector:
+        kubernetes.io/arch: amd64
+        kubernetes.io/os: linux
+      restartPolicy: OnFailure
+      serviceAccountName: kuma-pre-delete-job
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    helm.sh/hook: pre-upgrade
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-install-missing-crds
+  namespace: kuma-system
+spec:
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: kuma
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: kuma
+        app.kubernetes.io/version: 1.2.1
+        helm.sh/chart: kuma-0.6.1
+      name: kuma-install-missing-crds-job
+    spec:
+      containers:
+      - command:
+        - /kuma/scripts/install_missing_crds.sh
+        image: bitnami/kubectl:1.20
+        name: pre-upgrade-job
+        volumeMounts:
+        - mountPath: /kuma/missing
+          name: missing-crds
+          readOnly: true
+        - mountPath: /kuma/scripts
+          name: scripts
+          readOnly: true
+      initContainers:
+      - command:
+        - /kuma/scripts/save_missing_crds.sh
+        image: docker.io/kumahq/kumactl:1.2.1
+        name: pre-upgrade-job-init
+        volumeMounts:
+        - mountPath: /kuma/missing
+          name: missing-crds
+        - mountPath: /kuma/scripts
+          name: scripts
+          readOnly: true
+      nodeSelector:
+        kubernetes.io/arch: amd64
+        kubernetes.io/os: linux
+      restartPolicy: OnFailure
+      serviceAccountName: kuma-install-missing-crds
+      volumes:
+      - configMap:
+          defaultMode: 493
+          name: kuma-install-missing-crds-scripts
+        name: scripts
+      - emptyDir: {}
+        name: missing-crds
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    helm.sh/hook: pre-install
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
+    helm.sh/hook-weight: "5"
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-patch-ns
+  namespace: kuma-system
+spec:
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: kuma
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: kuma
+        app.kubernetes.io/version: 1.2.1
+        helm.sh/chart: kuma-0.6.1
+      name: kuma-patch-ns-script
+    spec:
+      containers:
+      - command:
+        - kubectl
+        - patch
+        - namespace
+        - kuma-system
+        - --type
+        - merge
+        - --patch
+        - '{ "metadata": { "labels": { "kuma.io/system-namespace": "true" } } }'
+        image: bitnami/kubectl:1.20
+        name: pre-install-job
+      nodeSelector:
+        kubernetes.io/arch: amd64
+        kubernetes.io/os: linux
+      restartPolicy: OnFailure
+      serviceAccountName: kuma-patch-ns-job
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-admission-mutating-webhook-configuration
+  namespace: kuma-system
+webhooks:
+- admissionReviewVersions:
+  - v1beta1
+  clientConfig:
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lSQU9xYmp0QUI0WFFJQjdYdmJza0d2M1l3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEEzTURnd01UUTNNemxhRncwek1UQTNNRFl3TVRRMwpNemxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFDWkxjaFdQM2RXOEszamtVUTQzRUJ4Z3ppV2FUTThGT3NjUUlORFlmVWpBTXFHRTRhc2NjenMKMDVNM2FCQjRCK2ZMWEZrZXowbEhnSytGa0ZVa0NKQnJheHZxYmJEc0U5RkU1eUdCZlJqbzJOMkpob3h1eEFDVgo2dlJIK1F5blU4ZzJkWUFEL3BaTXVHQTZFdEJFNHA1WTVyN3paR2pNRVlkdm9qMHpwREhCdHhWV0JMbkZjeVFyCkt3M2dFYlNvbndhVWZ3R3lSeTBRdFBsZHBscGM1eDZrZGI5Sy92bGNPK1BKamFGTjNudE5kUzJXWG9FV0l0eVEKS291VnVxUjFRclZJT2Jjd21jTzhPZHdlK2pBNnNPalk3ZWRTaHRHeVdtUzh5dFYvWFdBNXFXK1d4NkJpb1lVZAowOENmNzU4L3BWWWdKVDZFRGZDbmhXQmpnUW9qbXJDdkFnTUJBQUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDCnBEQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVWdlUWxEcEJMZ0g3NG9DTXhYTjJLdGc4dXR2OHdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQURMcXFtTWdnK3MyYWlsRjFSQjJ2NUpPelllZENIdTNteE1LRUxibGExSGcrdWhMZVV2c3pWNXBjSlkvCldvRzdkRVdTUEVDc1N2bUFJcHYrTVBFUnhLSU53aTh6K21Ucyt6M2hhd1RMd1crTnhONVB5bis2Q1BvNUFLRS8KWTlkbWlETGhRL0ZlRm9XNVhhV2ZpWlN1WlB5NlRUa0xGVGdTdVY3TkppVHhVSjVLbTVTTEFoWUFidDJzcWFOaApIZ1ByOUNjTnN0dnRLVyt6V0pWaHBaNFNpckdVM0lxNWxpOTkxTGxSTTNkSU5nWnNENlVoVjAvWlcvUXJOMU14CkhVRU5GanJJQnFzYWFHd2Q1TVhnZW9QL20vd2R0MTdoT1FrSzNHNmxTUThEYkw5QlpuZU5CaTdwT1o0QnNkOVAKQWYwa2l6VmVFK2I2cU9yc1ZXbjVNdE9wN2d3PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    service:
+      name: kuma-control-plane
+      namespace: kuma-system
+      path: /default-kuma-io-v1alpha1-mesh
+  failurePolicy: Fail
+  name: mesh.defaulter.kuma-admission.kuma.io
+  rules:
+  - apiGroups:
+    - kuma.io
+    apiVersions:
+    - v1alpha1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - meshes
+  sideEffects: None
+- admissionReviewVersions:
+  - v1beta1
+  clientConfig:
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lSQU9xYmp0QUI0WFFJQjdYdmJza0d2M1l3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEEzTURnd01UUTNNemxhRncwek1UQTNNRFl3TVRRMwpNemxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFDWkxjaFdQM2RXOEszamtVUTQzRUJ4Z3ppV2FUTThGT3NjUUlORFlmVWpBTXFHRTRhc2NjenMKMDVNM2FCQjRCK2ZMWEZrZXowbEhnSytGa0ZVa0NKQnJheHZxYmJEc0U5RkU1eUdCZlJqbzJOMkpob3h1eEFDVgo2dlJIK1F5blU4ZzJkWUFEL3BaTXVHQTZFdEJFNHA1WTVyN3paR2pNRVlkdm9qMHpwREhCdHhWV0JMbkZjeVFyCkt3M2dFYlNvbndhVWZ3R3lSeTBRdFBsZHBscGM1eDZrZGI5Sy92bGNPK1BKamFGTjNudE5kUzJXWG9FV0l0eVEKS291VnVxUjFRclZJT2Jjd21jTzhPZHdlK2pBNnNPalk3ZWRTaHRHeVdtUzh5dFYvWFdBNXFXK1d4NkJpb1lVZAowOENmNzU4L3BWWWdKVDZFRGZDbmhXQmpnUW9qbXJDdkFnTUJBQUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDCnBEQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVWdlUWxEcEJMZ0g3NG9DTXhYTjJLdGc4dXR2OHdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQURMcXFtTWdnK3MyYWlsRjFSQjJ2NUpPelllZENIdTNteE1LRUxibGExSGcrdWhMZVV2c3pWNXBjSlkvCldvRzdkRVdTUEVDc1N2bUFJcHYrTVBFUnhLSU53aTh6K21Ucyt6M2hhd1RMd1crTnhONVB5bis2Q1BvNUFLRS8KWTlkbWlETGhRL0ZlRm9XNVhhV2ZpWlN1WlB5NlRUa0xGVGdTdVY3TkppVHhVSjVLbTVTTEFoWUFidDJzcWFOaApIZ1ByOUNjTnN0dnRLVyt6V0pWaHBaNFNpckdVM0lxNWxpOTkxTGxSTTNkSU5nWnNENlVoVjAvWlcvUXJOMU14CkhVRU5GanJJQnFzYWFHd2Q1TVhnZW9QL20vd2R0MTdoT1FrSzNHNmxTUThEYkw5QlpuZU5CaTdwT1o0QnNkOVAKQWYwa2l6VmVFK2I2cU9yc1ZXbjVNdE9wN2d3PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    service:
+      name: kuma-control-plane
+      namespace: kuma-system
+      path: /owner-reference-kuma-io-v1alpha1
+  failurePolicy: Fail
+  name: owner-reference.kuma-admission.kuma.io
+  rules:
+  - apiGroups:
+    - kuma.io
+    apiVersions:
+    - v1alpha1
+    operations:
+    - CREATE
+    resources:
+    - circuitbreakers
+    - externalservices
+    - faultinjections
+    - healthchecks
+    - retries
+    - proxytemplates
+    - ratelimits
+    - trafficlogs
+    - trafficpermissions
+    - trafficroutes
+    - traffictraces
+  sideEffects: None
+- admissionReviewVersions:
+  - v1beta1
+  clientConfig:
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lSQU9xYmp0QUI0WFFJQjdYdmJza0d2M1l3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEEzTURnd01UUTNNemxhRncwek1UQTNNRFl3TVRRMwpNemxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFDWkxjaFdQM2RXOEszamtVUTQzRUJ4Z3ppV2FUTThGT3NjUUlORFlmVWpBTXFHRTRhc2NjenMKMDVNM2FCQjRCK2ZMWEZrZXowbEhnSytGa0ZVa0NKQnJheHZxYmJEc0U5RkU1eUdCZlJqbzJOMkpob3h1eEFDVgo2dlJIK1F5blU4ZzJkWUFEL3BaTXVHQTZFdEJFNHA1WTVyN3paR2pNRVlkdm9qMHpwREhCdHhWV0JMbkZjeVFyCkt3M2dFYlNvbndhVWZ3R3lSeTBRdFBsZHBscGM1eDZrZGI5Sy92bGNPK1BKamFGTjNudE5kUzJXWG9FV0l0eVEKS291VnVxUjFRclZJT2Jjd21jTzhPZHdlK2pBNnNPalk3ZWRTaHRHeVdtUzh5dFYvWFdBNXFXK1d4NkJpb1lVZAowOENmNzU4L3BWWWdKVDZFRGZDbmhXQmpnUW9qbXJDdkFnTUJBQUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDCnBEQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVWdlUWxEcEJMZ0g3NG9DTXhYTjJLdGc4dXR2OHdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQURMcXFtTWdnK3MyYWlsRjFSQjJ2NUpPelllZENIdTNteE1LRUxibGExSGcrdWhMZVV2c3pWNXBjSlkvCldvRzdkRVdTUEVDc1N2bUFJcHYrTVBFUnhLSU53aTh6K21Ucyt6M2hhd1RMd1crTnhONVB5bis2Q1BvNUFLRS8KWTlkbWlETGhRL0ZlRm9XNVhhV2ZpWlN1WlB5NlRUa0xGVGdTdVY3TkppVHhVSjVLbTVTTEFoWUFidDJzcWFOaApIZ1ByOUNjTnN0dnRLVyt6V0pWaHBaNFNpckdVM0lxNWxpOTkxTGxSTTNkSU5nWnNENlVoVjAvWlcvUXJOMU14CkhVRU5GanJJQnFzYWFHd2Q1TVhnZW9QL20vd2R0MTdoT1FrSzNHNmxTUThEYkw5QlpuZU5CaTdwT1o0QnNkOVAKQWYwa2l6VmVFK2I2cU9yc1ZXbjVNdE9wN2d3PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    service:
+      name: kuma-control-plane
+      namespace: kuma-system
+      path: /inject-sidecar
+  failurePolicy: Ignore
+  name: kuma-injector.kuma.io
+  rules:
+  - apiGroups:
+    - ""
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    resources:
+    - pods
+  sideEffects: None
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  labels:
+    app.kubernetes.io/instance: kuma
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kuma
+    app.kubernetes.io/version: 1.2.1
+    helm.sh/chart: kuma-0.6.1
+  name: kuma-validating-webhook-configuration
+  namespace: kuma-system
+webhooks:
+- admissionReviewVersions:
+  - v1beta1
+  clientConfig:
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lSQU9xYmp0QUI0WFFJQjdYdmJza0d2M1l3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEEzTURnd01UUTNNemxhRncwek1UQTNNRFl3TVRRMwpNemxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFDWkxjaFdQM2RXOEszamtVUTQzRUJ4Z3ppV2FUTThGT3NjUUlORFlmVWpBTXFHRTRhc2NjenMKMDVNM2FCQjRCK2ZMWEZrZXowbEhnSytGa0ZVa0NKQnJheHZxYmJEc0U5RkU1eUdCZlJqbzJOMkpob3h1eEFDVgo2dlJIK1F5blU4ZzJkWUFEL3BaTXVHQTZFdEJFNHA1WTVyN3paR2pNRVlkdm9qMHpwREhCdHhWV0JMbkZjeVFyCkt3M2dFYlNvbndhVWZ3R3lSeTBRdFBsZHBscGM1eDZrZGI5Sy92bGNPK1BKamFGTjNudE5kUzJXWG9FV0l0eVEKS291VnVxUjFRclZJT2Jjd21jTzhPZHdlK2pBNnNPalk3ZWRTaHRHeVdtUzh5dFYvWFdBNXFXK1d4NkJpb1lVZAowOENmNzU4L3BWWWdKVDZFRGZDbmhXQmpnUW9qbXJDdkFnTUJBQUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDCnBEQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVWdlUWxEcEJMZ0g3NG9DTXhYTjJLdGc4dXR2OHdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQURMcXFtTWdnK3MyYWlsRjFSQjJ2NUpPelllZENIdTNteE1LRUxibGExSGcrdWhMZVV2c3pWNXBjSlkvCldvRzdkRVdTUEVDc1N2bUFJcHYrTVBFUnhLSU53aTh6K21Ucyt6M2hhd1RMd1crTnhONVB5bis2Q1BvNUFLRS8KWTlkbWlETGhRL0ZlRm9XNVhhV2ZpWlN1WlB5NlRUa0xGVGdTdVY3TkppVHhVSjVLbTVTTEFoWUFidDJzcWFOaApIZ1ByOUNjTnN0dnRLVyt6V0pWaHBaNFNpckdVM0lxNWxpOTkxTGxSTTNkSU5nWnNENlVoVjAvWlcvUXJOMU14CkhVRU5GanJJQnFzYWFHd2Q1TVhnZW9QL20vd2R0MTdoT1FrSzNHNmxTUThEYkw5QlpuZU5CaTdwT1o0QnNkOVAKQWYwa2l6VmVFK2I2cU9yc1ZXbjVNdE9wN2d3PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    service:
+      name: kuma-control-plane
+      namespace: kuma-system
+      path: /validate-kuma-io-v1alpha1
+  failurePolicy: Fail
+  name: validator.kuma-admission.kuma.io
+  rules:
+  - apiGroups:
+    - kuma.io
+    apiVersions:
+    - v1alpha1
+    operations:
+    - CREATE
+    - UPDATE
+    - DELETE
+    resources:
+    - circuitbreakers
+    - dataplanes
+    - externalservices
+    - faultinjections
+    - healthchecks
+    - retries
+    - meshes
+    - proxytemplates
+    - ratelimits
+    - trafficlogs
+    - trafficpermissions
+    - trafficroutes
+    - traffictraces
+    - zones
+  sideEffects: None
+- admissionReviewVersions:
+  - v1beta1
+  clientConfig:
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lSQU9xYmp0QUI0WFFJQjdYdmJza0d2M1l3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEEzTURnd01UUTNNemxhRncwek1UQTNNRFl3TVRRMwpNemxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFDWkxjaFdQM2RXOEszamtVUTQzRUJ4Z3ppV2FUTThGT3NjUUlORFlmVWpBTXFHRTRhc2NjenMKMDVNM2FCQjRCK2ZMWEZrZXowbEhnSytGa0ZVa0NKQnJheHZxYmJEc0U5RkU1eUdCZlJqbzJOMkpob3h1eEFDVgo2dlJIK1F5blU4ZzJkWUFEL3BaTXVHQTZFdEJFNHA1WTVyN3paR2pNRVlkdm9qMHpwREhCdHhWV0JMbkZjeVFyCkt3M2dFYlNvbndhVWZ3R3lSeTBRdFBsZHBscGM1eDZrZGI5Sy92bGNPK1BKamFGTjNudE5kUzJXWG9FV0l0eVEKS291VnVxUjFRclZJT2Jjd21jTzhPZHdlK2pBNnNPalk3ZWRTaHRHeVdtUzh5dFYvWFdBNXFXK1d4NkJpb1lVZAowOENmNzU4L3BWWWdKVDZFRGZDbmhXQmpnUW9qbXJDdkFnTUJBQUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDCnBEQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVWdlUWxEcEJMZ0g3NG9DTXhYTjJLdGc4dXR2OHdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQURMcXFtTWdnK3MyYWlsRjFSQjJ2NUpPelllZENIdTNteE1LRUxibGExSGcrdWhMZVV2c3pWNXBjSlkvCldvRzdkRVdTUEVDc1N2bUFJcHYrTVBFUnhLSU53aTh6K21Ucyt6M2hhd1RMd1crTnhONVB5bis2Q1BvNUFLRS8KWTlkbWlETGhRL0ZlRm9XNVhhV2ZpWlN1WlB5NlRUa0xGVGdTdVY3TkppVHhVSjVLbTVTTEFoWUFidDJzcWFOaApIZ1ByOUNjTnN0dnRLVyt6V0pWaHBaNFNpckdVM0lxNWxpOTkxTGxSTTNkSU5nWnNENlVoVjAvWlcvUXJOMU14CkhVRU5GanJJQnFzYWFHd2Q1TVhnZW9QL20vd2R0MTdoT1FrSzNHNmxTUThEYkw5QlpuZU5CaTdwT1o0QnNkOVAKQWYwa2l6VmVFK2I2cU9yc1ZXbjVNdE9wN2d3PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    service:
+      name: kuma-control-plane
+      namespace: kuma-system
+      path: /validate-v1-service
+  failurePolicy: Ignore
+  name: service.validator.kuma-admission.kuma.io
+  rules:
+  - apiGroups:
+    - ""
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    - UPDATE
+    resources:
+    - services
+  sideEffects: None
+- admissionReviewVersions:
+  - v1beta1
+  clientConfig:
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lSQU9xYmp0QUI0WFFJQjdYdmJza0d2M1l3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEEzTURnd01UUTNNemxhRncwek1UQTNNRFl3TVRRMwpNemxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFDWkxjaFdQM2RXOEszamtVUTQzRUJ4Z3ppV2FUTThGT3NjUUlORFlmVWpBTXFHRTRhc2NjenMKMDVNM2FCQjRCK2ZMWEZrZXowbEhnSytGa0ZVa0NKQnJheHZxYmJEc0U5RkU1eUdCZlJqbzJOMkpob3h1eEFDVgo2dlJIK1F5blU4ZzJkWUFEL3BaTXVHQTZFdEJFNHA1WTVyN3paR2pNRVlkdm9qMHpwREhCdHhWV0JMbkZjeVFyCkt3M2dFYlNvbndhVWZ3R3lSeTBRdFBsZHBscGM1eDZrZGI5Sy92bGNPK1BKamFGTjNudE5kUzJXWG9FV0l0eVEKS291VnVxUjFRclZJT2Jjd21jTzhPZHdlK2pBNnNPalk3ZWRTaHRHeVdtUzh5dFYvWFdBNXFXK1d4NkJpb1lVZAowOENmNzU4L3BWWWdKVDZFRGZDbmhXQmpnUW9qbXJDdkFnTUJBQUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDCnBEQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVWdlUWxEcEJMZ0g3NG9DTXhYTjJLdGc4dXR2OHdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQURMcXFtTWdnK3MyYWlsRjFSQjJ2NUpPelllZENIdTNteE1LRUxibGExSGcrdWhMZVV2c3pWNXBjSlkvCldvRzdkRVdTUEVDc1N2bUFJcHYrTVBFUnhLSU53aTh6K21Ucyt6M2hhd1RMd1crTnhONVB5bis2Q1BvNUFLRS8KWTlkbWlETGhRL0ZlRm9XNVhhV2ZpWlN1WlB5NlRUa0xGVGdTdVY3TkppVHhVSjVLbTVTTEFoWUFidDJzcWFOaApIZ1ByOUNjTnN0dnRLVyt6V0pWaHBaNFNpckdVM0lxNWxpOTkxTGxSTTNkSU5nWnNENlVoVjAvWlcvUXJOMU14CkhVRU5GanJJQnFzYWFHd2Q1TVhnZW9QL20vd2R0MTdoT1FrSzNHNmxTUThEYkw5QlpuZU5CaTdwT1o0QnNkOVAKQWYwa2l6VmVFK2I2cU9yc1ZXbjVNdE9wN2d3PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    service:
+      name: kuma-control-plane
+      namespace: kuma-system
+      path: /validate-v1-secret
+  failurePolicy: Ignore
+  name: secret.validator.kuma-admission.kuma.io
+  namespaceSelector:
+    matchLabels:
+      kuma.io/system-namespace: "true"
+  rules:
+  - apiGroups:
+    - ""
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    - UPDATE
+    - DELETE
+    resources:
+    - secrets
+  sideEffects: None

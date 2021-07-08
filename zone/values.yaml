@@ -1,0 +1,6 @@
+controlPlane:
+  mode: remote
+  zone: kind
+  kdsGlobalAddress: grpcs://100.111.69.60:5685
+ingress:
+  enabled: true

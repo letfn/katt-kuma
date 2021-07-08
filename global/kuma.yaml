@@ -456,6 +456,7 @@ spec:
   ports:
   - name: http-api-server
     port: 5681
+    nodePort: 35681
   - name: https-api-server
     port: 5682
   - name: https-admission-server
@@ -465,7 +466,7 @@ spec:
     app: kuma-control-plane
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/name: kuma
-  type: ClusterIP
+  type: NodePort
 ---
 apiVersion: v1
 kind: Service
@@ -477,10 +478,11 @@ spec:
   ports:
   - name: global-zone-sync
     port: 5685
+    nodePort: 35685
   selector:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/name: kuma
-  type: LoadBalancer
+  type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment

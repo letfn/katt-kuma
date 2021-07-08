@@ -456,7 +456,7 @@ spec:
   ports:
   - name: http-api-server
     port: 5681
-    nodePort: 35681
+    nodePort: 30681
   - name: https-api-server
     port: 5682
   - name: https-admission-server
@@ -478,7 +478,7 @@ spec:
   ports:
   - name: global-zone-sync
     port: 5685
-    nodePort: 35685
+    nodePort: 30685
   selector:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/name: kuma

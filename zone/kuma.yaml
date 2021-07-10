@@ -511,7 +511,7 @@ spec:
     app: kuma-ingress
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/name: kuma
-  type: LoadBalancer
+  type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment

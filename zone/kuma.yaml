@@ -507,6 +507,7 @@ spec:
   - port: 10001
     protocol: TCP
     targetPort: 10001
+    nodePort: 31001
   selector:
     app: kuma-ingress
     app.kubernetes.io/instance: kuma
@@ -656,6 +657,8 @@ spec:
     metadata:
       annotations:
         kuma.io/ingress: enabled
+        kuma.io/ingress-public-address: 100.111.69.60
+        kuma.io/ingress-public-port: 10001
       labels:
         app: kuma-ingress
         app.kubernetes.io/instance: kuma

@@ -658,7 +658,7 @@ spec:
       annotations:
         kuma.io/ingress: enabled
         kuma.io/ingress-public-address: 100.111.69.60
-        kuma.io/ingress-public-port: 10001
+        kuma.io/ingress-public-port: "10001"
       labels:
         app: kuma-ingress
         app.kubernetes.io/instance: kuma

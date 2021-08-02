@@ -5,8 +5,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-control-plane
   namespace: kuma-system
 ---
@@ -17,8 +17,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-ingress
   namespace: kuma-system
 ---
@@ -32,8 +32,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-patch-ns-job
   namespace: kuma-system
 ---
@@ -47,8 +47,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-pre-delete-job
   namespace: kuma-system
 ---
@@ -63,8 +63,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-install-missing-crds
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -74,8 +74,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-control-plane
   namespace: kuma-system
 rules:
@@ -114,8 +114,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-patch-ns-job
   namespace: kuma-system
 rules:
@@ -136,8 +136,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-control-plane
 rules:
 - apiGroups:
@@ -248,8 +248,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-install-missing-crds
 rules:
 - apiGroups:
@@ -271,8 +271,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-pre-delete-job
 rules:
 - apiGroups:
@@ -308,8 +308,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-patch-ns-job
   namespace: kuma-system
 roleRef:
@@ -328,8 +328,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-control-plane
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -351,8 +351,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-install-missing-crds
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -373,8 +373,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-pre-delete-job
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -397,8 +397,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-control-plane-config
   namespace: kuma-system
 ---
@@ -432,24 +432,24 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-install-missing-crds-scripts
   namespace: kuma-system
 ---
 apiVersion: v1
 data:
-  ca.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRTlcrd0VUd0tDTUVSV3RXSncvVjBNREFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGN3T0RBek5ESTBORm9YRFRNeE1EY3dOakF6TkRJMApORm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQU5EdFUxNXl1R2NPZjFRbXZRNjN1ZE10NUhNVjB3bWg5VjMvdTZkWHRlK3NPWXVVeEJpc1pGcDkKd05nRkRMYmliUVRqWGNSN1U0aUMxd1FFNW1qY2cyS2FyNUFmaXJBejB6M3hvRTdoQmZEV014N3BjcEMwd3BiQwpLVlR3bExHWEwvOUovbmNSSVdRQWFpNExsREpvUkZ5aWZlSnVsR1c5ejl5aDdWbWEyQjRaMHZ4QzJrejJIZnQ5CkZCa2g3ai9DajYzaXlSK1R3RmxmMlhpbG1kOWNiSHY2T25hcWFsR3NIQ1N0NWJZQ0wybmlvN2thWEZhRDJ1b3EKc3Z4R0txRlhYZXZ4L0tmRTFuMnpvYWQzNmI2bnlVWGt3cFZGTEhMQ0xPT1Z6Q3dzbGwrTVNqbHJoajZsdVFQOAoxZlBTbGxWeWttYW1XbDBYRms2ZGN4VGRKUWtrUVJrQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJRZm5FeEcrak43NkNWNUtYS3Q1c2FGWW5oUFZ6QU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBeUE3Q1FZVlFQVFhFZHlKd2haTERlYTNmQXh6YlhqOGRFYWlGNE00S0oxaFBpcFFCamMwUEpsVGEyRWNWCnYxdHpkMkJRa0dxRzlNd2t1TVBYanRCUU5zUzZqRHJ1ZENyRW9vRzNhckF0dkRGUUx2WVhVekVOdVB2Q1lsYVgKOEZvbkJGMzBCa0o5cVZiU2VsVnZIcGhLMnpVSFhsaVF2aFFUOE9UbE5QNVJpV2R6V2NhdEQ2VGtTTDB4WXZhagpRdFZDU2ordzlmbHExQ1Y3OVljYkJOZUNQTlkvMkg2OEZRRXVxK2h6SitVaWowS1B6REtVUGFOWURScDVHUElzClNscWx0Y1J6eGJlTXM2OWlVOUpWbERpMnVsNTh2bmcwWUJ4cjlRZ3dkcDQ3S2FxT2F3eDJOZ2psQmhnRUdBaysKbGRDTHFBUjlXSEo3Nm40NUpnSTlLdUJ0eGc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
-  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURhekNDQWxPZ0F3SUJBZ0lSQUxoZTZSQU5icDVpVTc5TnNOR0RPaVl3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEEzTURnd016UXlORFJhRncwek1UQTNNRFl3TXpReQpORFJhTUIweEd6QVpCZ05WQkFNVEVtdDFiV0V0WTI5dWRISnZiQzF3YkdGdVpUQ0NBU0l3RFFZSktvWklodmNOCkFRRUJCUUFEZ2dFUEFEQ0NBUW9DZ2dFQkFKOUNORGxCcjFpSW94eWdIOFdSUGRXS2ZIcC9MZlhwNm90M2JHVnMKRGEvM29OZkxOVXM4Z1VaeTBnRUdBYmNNNjNpMStpYXJiWUNJQVVUSkZ0SCs5MXpwMnpRVUczRWMrM24vYThqWApzMExId09uVVNRZGdxZVZJaEtoVytjZzQ1aDZZaTE5Q2VwUlBjYmJPbnRxeU11aGxGM1BKbHNZOURuTFlUVmc3CmF6bkxjbmRWQTdlaExBdG9YWUMxYUx5RGNhckI3T0N5NUtnT2VDRkk4L2RTR2FMQXpLTytHMTFyMFFydW5KYUUKVDB1MUthVDhidVgrQTRRWnFQQ2xaZk93eGxJRDluVXg5cEJMRy91ZG1yb25JME9DbjhnRHN0cmFBZFQra25rMwpSSVlyU3FBdGI0UTdNUVhvVlh4MkVLaGJZMHFabGZBdXROUEluMUluQjdBTDB3Y0NBd0VBQWFPQnNEQ0JyVEFPCkJnTlZIUThCQWY4RUJBTUNCYUF3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQ01Bd0cKQTFVZEV3RUIvd1FDTUFBd0h3WURWUjBqQkJnd0ZvQVVINXhNUnZvemUrZ2xlU2x5cmViR2hXSjRUMWN3VFFZRApWUjBSQkVZd1JJSWVhM1Z0WVMxamIyNTBjbTlzTFhCc1lXNWxMbXQxYldFdGMzbHpkR1Z0Z2lKcmRXMWhMV052CmJuUnliMnd0Y0d4aGJtVXVhM1Z0WVMxemVYTjBaVzB1YzNaak1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQlMKN0VMMmtnNWsyQmZzSjdvU2ducm5GQVlZalpyMmtkdmtrMkZXTDFuL0hsTDdKWkR5OS9ZVldlUVQ3dkZJK2s1bQpXMmE1MVRrb0NOc3Fyc2RreDZBbG8raERuZmd6ejdLWGFISi9aSEQzcDUwNnpBZ1VmeGNqalJUeEhsTGl4VUttCnFyOTg1cU1ROEV4aFBGSGRmNEErMWMzaGV5RHkvcDBJdkM3czljUXp3U0Rab0gvNDN4WTRKclpkT0FKNk1JYloKRlRsdW5oN09jRXQ0ZVJldVV1cCtxNEM2SERjS2ZRd3pSazlZUUN1anc0K1hZRFU1b2ZJb09DNG5nQUMxUEd5Kwpua1VwRlM1eFpVR3pjais4SXdpU3M4QnI5K2dsbUpXN1BISmM5YUlPTzF4Skw0MGFpN05LbHNIaTgvc2tXZkF3Cm9TUWVpYVU0UXpZaCtlVW0rYUZqCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
-  tls.key: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb2dJQkFBS0NBUUVBbjBJME9VR3ZXSWlqSEtBZnhaRTkxWXA4ZW44dDllbnFpM2RzWld3TnIvZWcxOHMxClN6eUJSbkxTQVFZQnR3enJlTFg2SnF0dGdJZ0JSTWtXMGY3M1hPbmJOQlFiY1J6N2VmOXJ5TmV6UXNmQTZkUkoKQjJDcDVVaUVxRmI1eURqbUhwaUxYMEo2bEU5eHRzNmUyckl5NkdVWGM4bVd4ajBPY3RoTldEdHJPY3R5ZDFVRAp0NkVzQzJoZGdMVm92SU54cXNIczRMTGtxQTU0SVVqejkxSVpvc0RNbzc0YlhXdlJDdTZjbG9SUFM3VXBwUHh1CjVmNERoQm1vOEtWbDg3REdVZ1AyZFRIMmtFc2IrNTJhdWljalE0S2Z5QU95MnRvQjFQNlNlVGRFaGl0S29DMXYKaERzeEJlaFZmSFlRcUZ0alNwbVY4QzYwMDhpZlVpY0hzQXZUQndJREFRQUJBb0lCQURyaWw3eXo5TW1mZS9BUgpwSzNBVGtTdXQrZnpMbU5HNGxvL0JlMWFUcFZKMGtiMzgvU2xvb2NSM1dSVGZEN2FvQlk1OHd4cFJrdkgvZkFaCkNqOExMeHREdkxFODNnaXMxcTc5S2pWUXpBOWRISTlZMXNmTGpnWWhFaXZNUFA4elNxTDFkRkw4bWFaTTJaYm0KUHdaTjdWVFFUQ09iM2d2ZWQ0RXZTU25lam44SGpTYUJBdUVyamVNTGhyNUhHMkdMY04yNFVreW0zRG1JTi9NSApheWFSSEF2Nk5jYmt4SzlMdjNVSjhsd2J1cE5XeVdKZ1BESUVBSVl5clpkZkNraG43OVNtR2s4NExtamtjWDl6CnR4NmZMS0N6V0FXbHpOczZtaHQwVFJydjVUTzkvMG1HTkljWitvQnBndGlqZFdQZWZRNURCOHh1aW1VaHhwN3EKQjNkWVhrRUNnWUVBenZPS2o1OVNveVV6RVY3eTdqNzBMaHM5Q2Nmd1FvYzBHQytudGI5dDF0ZEx6c203Zm5BSQpTeVF3ZGVJbGN2djg5cmZndEsveWJFRGE2Qmx6eHhxM21aWWc1NHVLNTVVVWd0YTdyWjRvVWtkbnJHQmpNZWpICmpicFhTQ2FFaC9XemFkY3NOaE9PQU9XQ3ZkemtzcVFxSWZydUI1OUo3ZzQrMVg4SS9kdnloT1VDZ1lFQXhRRDYKblBwUjdPV2FCYUJOcU14dEFtTGh4VFc4dFRtUnduU2pDWUJjbGFiTG1qSDIveGVrY2R6VzY3dVRHd2hKOEpHUApYRi9MVk9Ua0hKcUw4M1JLZWhvNm9ORHlqb0ZQZ1ZxVWNKZVRoK0VsRmNyZlJkdVlzWkZxYnNIMEVQVXRqbU1GCklma2FCeklFczc2YWJtdHVMbitYQ2ZnVm82aVc3dXVKSTBEZmhYc0NnWUJlVTNUeFYyNEQvRjJWYWxDUnROSDQKL2VOSlJQOUdZM2VrR254M2c0UWQ2MDJiT0Nta1RJNExLYmlJMG9XOUxndXpyRVhZTldYcVgza25Wd3FGVXJFaQphT0lnaDJMTmdRNnpRQXFVN01SMkZDTzExc3ovbjVqdENXVGs5dUZyVXRydXYrdGZ6blBvQnJRYnM4WHRncFBOCm55REZDcDVZeWRkcjJoWVFGeU1uM1FLQmdDZVAxOFE0Zk1WUElvd29zZy9JNWNkSjVqNzlXS1VvSjM1ZWYvTkQKaE5SRXg3Unlma0NpRmRNTDMxazl0UUFEdlIyRGpiK21PU1lXUlR6OVNFZWV2ZW9oWkU2eFIxU1k0VWQvMGpsKwpKeEZ0aEU0SkRLZHh2d3RCd1piMmVqWUJscUYyZnl4Z1l2cTQ3N3JNOXlSZmpLUG4yWVFWL3ZwN3U3dkZMeWdXCk9nMExBb0dBRGNoSzZ6SG1ERGp5SUxlT0tudXlNMjcyS2pXVkhYVUdkQW05OHNFLzF6SEZPeWtZSzJhdll4YXkKSVh5TjdSZlJpbWlFRGJ0a2oxcWpiMTNUaFhkRnFWNE5PY1VsR1dQcGdNS2w3Z2E3Umk1R3RKcFNacWo5SE90TwpRTTlXT1I1dVlFeU16UnNTdnZjSElZR1E2S0d2ZGlxSDhCSmNWZkVYNVlJNmtkS2ZKNk09Ci0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
+  ca.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRUldVSFlUeUJJanFrVGZFVG5sREFvREFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGd3TWpBeE5URXhNRm9YRFRNeE1EY3pNVEF4TlRFeApNRm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQUtpcXFPNTU0MDFTVGVxeHRTRTZqU0RsVFl1SnNjV0R3TGJySWMwd0RZVWZwZlE1WVpSQXJ0Q3YKTGV1SGl2V1RDelNFRjE2bEJRWmJ0bE16cVhDVlp6Um1jVU1JVW0zeUoxaCtSSWNlS2JrMHpoNytCamJLNGhhQQpDSGtjVkFKc3Ria2hXYjlwTHc4ejV4OE5qK0QwbitrWmYvbHovZGZzSGc4ZGFNajUyOCtyeEQ5S0ZFaXR2WVl1ClZuWDBaZ1g4S2lTaTY2clhhWktZWVlsYjE2elZLZjlGb1JIYnRIWFdwcUFsSUNWTGh0THA4OWcwZDZHamFjYUkKYkczRHY0ai9kNktPK0M0RksyNURRSkdjYjR3K3NlYVNMUkRaOGJsNHE5Wjhld3N6UG9PYmhtTHdOVnU2dEJqdgpMMEFKdFNKbjZITTErMnNBa2dpZ3p1Z3VJbkJ2TllVQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJRZTQ5aEJxZkcvMlY5UlRBM2VDam1rVWh4TnJEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBYnA4clhSY2NQRjF4QkJ4ZEhUL0s5cEZEc0JQSjhIT0o0UStKNTU0UEswOE5ONlMzdHNpdFpWVHRiejFyCnIwbTNsTUpZcHBiMEh1V3ROWHJtKzc2MWF5NG01cjQ5aXVMcXN1dVpzL2d4QmhOcWh0clNRb1dSVDdnOFBXd2EKRWtCb1M2ZWdudjQ5ZGVJMFdPeGphRTU4cHk4WDc3REVpVkpPNi9oNmpBdGE0MU5tZmhsRS83a0dsZEN3bkdFdQpTdjV3UEEvbWxEMXYyczlkb3NDOXJvNTJvYmN3WEhOdUxRWjZHNmhweVNQalNEaWk2bjRQV3pPUHpKTG5EYUJjCjhYWUVaSVMxckk5b3BUUFZiTUxiZ2Vva2NXa3JIRlhqWVZNUENmV0NIK01xMzEyWjdOaUw3MUVRWFFscWVabFcKUkVSRFZvZGFDakU4bURkeC9aczdFS0tLN0E9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURhakNDQWxLZ0F3SUJBZ0lRZUl4akYycE45OCtjS1M2dnR4cVVPVEFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGd3TWpBeE5URXhNVm9YRFRNeE1EY3pNVEF4TlRFeApNVm93SFRFYk1Ca0dBMVVFQXhNU2EzVnRZUzFqYjI1MGNtOXNMWEJzWVc1bE1JSUJJakFOQmdrcWhraUc5dzBCCkFRRUZBQU9DQVE4QU1JSUJDZ0tDQVFFQXVLaDIzaHNqTjEzVHpaM0doVlVpaE4wdUo4RDlVQzNIRmFSUjZudWgKMlZMRFRFSndFeU9XYkZTanVqOHVXTE5MSUpQOFpZWTNMWGlQdHN6b1pyM2JzSEdWNVpoaGYwNmFqOWVQaTVTMwpPQXhNUjVtWW5jNlRiZytpQlBiekZIekttRXZLVTRmRVJ2K2xFMzdNenBoRDEzZnNtY1V1THkxTnd4UmFFNTZaCkEwNGdpSmVkMjZETDJFZml1QmRDaVR4dkxISjl4RmNpdmpZL0tNRGcrcXVMOTloOHlIcVhiSWplem9aUU1pY3QKUmFIUGtVSmFZOGNDU0t0WTdpRWZYWlBEc2NQSmNIN2dSTzVmVnRaY2ZxeERjQjFjZkZrWVFMeitnTGg4NVBnZQpURjhRSklQRldtQlp0QmxDOTdKcjg4Z2pwdlNZNHM1Tjl2VFQwdTRkczVQcHd3SURBUUFCbzRHd01JR3RNQTRHCkExVWREd0VCL3dRRUF3SUZvREFkQmdOVkhTVUVGakFVQmdnckJnRUZCUWNEQVFZSUt3WUJCUVVIQXdJd0RBWUQKVlIwVEFRSC9CQUl3QURBZkJnTlZIU01FR0RBV2dCUWU0OWhCcWZHLzJWOVJUQTNlQ2pta1VoeE5yREJOQmdOVgpIUkVFUmpCRWdoNXJkVzFoTFdOdmJuUnliMnd0Y0d4aGJtVXVhM1Z0WVMxemVYTjBaVzJDSW10MWJXRXRZMjl1CmRISnZiQzF3YkdGdVpTNXJkVzFoTFhONWMzUmxiUzV6ZG1Nd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFJam4KWXc0VWpnYjVzRXAyQStWa3NWdjNFQm1YUGNTd3BQU3RMV0tERDRDdUpGUmJyNkM3ODFnTDlUQkppdVBPemFyNgo4NnFmVlE4T29ZY0NxK2NpbkNmbFpFQUxiN3NhVUUrK3pROGM1T2NCOFhhUndPL3ltZlRWWFBLNGFlNmFiVk1jCnE1RFJjNnZ5UVROWkZoejdZWWJTNEU1SjJZZ2VHR1lvNHRIbG8xRVQzOW9pdEIvcy9wQ1YyeUZwRXlSU0Mya3oKQXd5NEZJd21jeVM3U3EyaWIweDhKQnphTjF2VlJBWWc3SDNpajJ6bm5KdmRTL2RUK1JlRE91QXJZWDl3R3Byawp5UUdMZFVzeU5vdURUZFFzak1Rb1BQOS9MTWxhWEhyN0h2NEJJMlZicVV2dmdjRkxNUW5kditPQXZUWS91Wm9FCkIyWVRvVFZJZzc3UlRGcjh5cU09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+  tls.key: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBdUtoMjNoc2pOMTNUelozR2hWVWloTjB1SjhEOVVDM0hGYVJSNm51aDJWTERURUp3CkV5T1diRlNqdWo4dVdMTkxJSlA4WllZM0xYaVB0c3pvWnIzYnNIR1Y1WmhoZjA2YWo5ZVBpNVMzT0F4TVI1bVkKbmM2VGJnK2lCUGJ6Rkh6S21FdktVNGZFUnYrbEUzN016cGhEMTNmc21jVXVMeTFOd3hSYUU1NlpBMDRnaUplZAoyNkRMMkVmaXVCZENpVHh2TEhKOXhGY2l2alkvS01EZytxdUw5OWg4eUhxWGJJamV6b1pRTWljdFJhSFBrVUphClk4Y0NTS3RZN2lFZlhaUERzY1BKY0g3Z1JPNWZWdFpjZnF4RGNCMWNmRmtZUUx6K2dMaDg1UGdlVEY4UUpJUEYKV21CWnRCbEM5N0pyODhnanB2U1k0czVOOXZUVDB1NGRzNVBwd3dJREFRQUJBb0lCQVFDYUJEa1F5OFcxdWxhYwptMG9uajNpNUpOb0lZbGxsOUtpbWptV2NrLzNNaTlGRTIrMHFxWFlmYVFFZXFPLzVINkk3eS9LcW95V0drWlljCnZBL2pFZHdZOE1RN3Vic29PZUdFdENDUUpUd2tUVzJhRXF4T2d5eElrbFZxbXFib29hVkJIWVhsNGNsK0JtQWoKUUpHR2gwMmVlL0lsMTJiTUJwZGpiS2dzMFEyQ3lNMVJHeGUzUWlWRTQ2dG15TlprZjVUdFdYRDdrOGZ4SGd6aQp3TlhNMTNLT2tFWnYydGY2M2pKVnE3WitTNEJjRWxDam50N1BGRHdYenVXRlFCSm5lVXJ2TlY3MlRObUZHMEdtCjBwc1lPQ2o0a2pzUzJhQlA2VjdVOERmVHRJeGJSQjJUSFhmVDNYQ2lrUlpLZ0t3cEhoTENkdUNDc2JCbDEwNjAKVThtWitCUmhBb0dCQU1pbktIenl5NXhGbW4rWUpjdncyeTJRcnN1VHlQVnJPRkthOGc3OUdtOTNXbkpLcjJONQpCUWtwcFhJQnUrb0R1ZGFoVTJmcHNpT0hJWkxQRzBPMVZMVXFmajkrbmJyVGpVdytmbjlxV0dYSTRBRlNJKzJDCjVKUWJmUVJNdkQzZXlpdDZ3RTVRcDJjeC8xWUdWZEE4UmtxS3o5cnI4MnJKeWNpOWxCcytQM1ZMQW9HQkFPdVgKMlFZcWd5dEFCWVJGYjlMQndLWWk2Z1haREd4TkphcXZFZmVieGV4Z1FmNzlEOVZMRGcxNFRXRTg2Z1RCZWcrTwoyYTdQK213dTB0c09FamJhWXk2WTlGYXArUG5TbFNzWitNaDRDZ040NzBjQXRjczBNY3hRSDlPVksxTlVaSGtaCm4rVTRsbFhOMTJGK2QwTTlpdjJTWVdmQmI2SlZVd2xPTWcxQ1c2cHBBb0dBWWN2SEdnOGtXZ2c2b3hHKzZrVjgKTGhza2RxaVMrN3JFZXM1MlNBUG9qSWQ1bDliNjROcXRMNmdTc1J4VFFGMk1pQ1dkQnpxSnpuTWdVL09KY0ZqQwo3b0hGZ3FEdHM0OUVnUEs4cU5GbVFFWEZtQjgyejU1S1ZqMkhrejdyU0tSN21QRjlKUzUrU1BlL1lXZzVEd014CnAwYzh3NURZMVNXQXFjeHNrVktuanowQ2dZQjc4dmdMZG5Kc1h0S0lOTUFRY2orWktPVlhEa3FxOEN2UkVTcXkKeXhIbXV2MzkyY1pxd1lJek5BZ0NFTHBPcGp4QjB6WlQ4cmdlRXNSODIzcFp3YXhNNTh3bGpHZWhpRmxTdytkUQpFVmV6Vy8wSHJpZjNNUTdDSDZXZSsrdy9lemNoUDRvUVh5VTVINE1obUJmSEdLbjNudndBU3BVaEl5TDgwbGNqCkFyYVhnUUtCZ0FnT2VLTHdVLzhYUGZwNXE3V09HTmg1OUVzeEZvVjgwcnpaR2R6WnlndzEvNzBGT0UxOTJ2amQKbzZ2MUI5TWtNZmdqZTlUVDB3b3JPK3N6LzZMRDNHY1JYSmNINnRlcXpoK1MvVUpGTmRlc1dTK2d6c0tOaDJIbQpuVGEyaG41Z0NET0RwM3lIbi9EUDBFTE04eU1CVnlNR1pQc2dhbHBqYmt5Z0w1Y0p0S0JWCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
 kind: Secret
 metadata:
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-tls-cert
   namespace: kuma-system
 type: kubernetes.io/tls
@@ -464,8 +464,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-control-plane
   namespace: kuma-system
 spec:
@@ -498,8 +498,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-ingress
   namespace: kuma-system
 spec:
@@ -507,12 +507,11 @@ spec:
   - port: 10001
     protocol: TCP
     targetPort: 10001
-    nodePort: 31001
   selector:
     app: kuma-ingress
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/name: kuma
-  type: NodePort
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -522,8 +521,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-control-plane
   namespace: kuma-system
 spec:
@@ -540,8 +539,8 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: adc29c508fd46e84eec9d28d4927e2b3be0ba37de5cc6baef28f5e0246fafa55
-        checksum/tls-secrets: b54ef41626641363d1b1699d425a2cae76cd73080c7fe4b1ed121efdd65b8eda
+        checksum/config: d197fa140fb2f04173c9f38a84787055696f859d2051b121a29b1fb6f20f5202
+        checksum/tls-secrets: 1ac3db05e437297fd426c66343facf3b7fce787226e12c0cd95f7c9e22b53410
       labels:
         app: kuma-control-plane
         app.kubernetes.io/instance: kuma
@@ -566,7 +565,7 @@ spec:
         - name: KUMA_GENERAL_TLS_KEY_FILE
           value: /var/run/secrets/kuma.io/tls-cert/tls.key
         - name: KUMA_INJECTOR_INIT_CONTAINER_IMAGE
-          value: docker.io/kumahq/kuma-init:1.2.1
+          value: docker.io/kumahq/kuma-init:1.2.3
         - name: KUMA_MODE
           value: zone
         - name: KUMA_MULTIZONE_ZONE_GLOBAL_ADDRESS
@@ -584,12 +583,12 @@ spec:
         - name: KUMA_RUNTIME_KUBERNETES_INJECTOR_CNI_ENABLED
           value: "false"
         - name: KUMA_RUNTIME_KUBERNETES_INJECTOR_SIDECAR_CONTAINER_IMAGE
-          value: docker.io/kumahq/kuma-dp:1.2.1
+          value: docker.io/kumahq/kuma-dp:1.2.3
         - name: KUMA_STORE_KUBERNETES_SYSTEM_NAMESPACE
           value: kuma-system
         - name: KUMA_STORE_TYPE
           value: kubernetes
-        image: docker.io/kumahq/kuma-cp:1.2.1
+        image: docker.io/kumahq/kuma-cp:1.2.3
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -638,8 +637,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-ingress
   namespace: kuma-system
 spec:
@@ -657,8 +656,6 @@ spec:
     metadata:
       annotations:
         kuma.io/ingress: enabled
-        kuma.io/ingress-public-address: 100.111.69.60
-        kuma.io/ingress-public-port: "10001"
       labels:
         app: kuma-ingress
         app.kubernetes.io/instance: kuma
@@ -691,7 +688,7 @@ spec:
           value: /var/run/secrets/kubernetes.io/serviceaccount/token
         - name: KUMA_DATAPLANE_PROXY_TYPE
           value: ingress
-        image: docker.io/kumahq/kuma-dp:1.2.1
+        image: docker.io/kumahq/kuma-dp:1.2.3
         imagePullPolicy: IfNotPresent
         livenessProbe:
           exec:
@@ -749,8 +746,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-delete-webhook
   namespace: kuma-system
 spec:
@@ -760,8 +757,8 @@ spec:
         app.kubernetes.io/instance: kuma
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: kuma
-        app.kubernetes.io/version: 1.2.1
-        helm.sh/chart: kuma-0.6.1
+        app.kubernetes.io/version: 1.2.3
+        helm.sh/chart: kuma-0.6.3
       name: kuma-delete-webhook
     spec:
       containers:
@@ -788,8 +785,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-install-missing-crds
   namespace: kuma-system
 spec:
@@ -799,8 +796,8 @@ spec:
         app.kubernetes.io/instance: kuma
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: kuma
-        app.kubernetes.io/version: 1.2.1
-        helm.sh/chart: kuma-0.6.1
+        app.kubernetes.io/version: 1.2.3
+        helm.sh/chart: kuma-0.6.3
       name: kuma-install-missing-crds-job
     spec:
       containers:
@@ -818,7 +815,7 @@ spec:
       initContainers:
       - command:
         - /kuma/scripts/save_missing_crds.sh
-        image: docker.io/kumahq/kumactl:1.2.1
+        image: docker.io/kumahq/kumactl:1.2.3
         name: pre-upgrade-job-init
         volumeMounts:
         - mountPath: /kuma/missing
@@ -850,8 +847,8 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-patch-ns
   namespace: kuma-system
 spec:
@@ -861,8 +858,8 @@ spec:
         app.kubernetes.io/instance: kuma
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: kuma
-        app.kubernetes.io/version: 1.2.1
-        helm.sh/chart: kuma-0.6.1
+        app.kubernetes.io/version: 1.2.3
+        helm.sh/chart: kuma-0.6.3
       name: kuma-patch-ns-script
     spec:
       containers:
@@ -890,15 +887,15 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-admission-mutating-webhook-configuration
   namespace: kuma-system
 webhooks:
 - admissionReviewVersions:
   - v1beta1
   clientConfig:
-    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRTlcrd0VUd0tDTUVSV3RXSncvVjBNREFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGN3T0RBek5ESTBORm9YRFRNeE1EY3dOakF6TkRJMApORm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQU5EdFUxNXl1R2NPZjFRbXZRNjN1ZE10NUhNVjB3bWg5VjMvdTZkWHRlK3NPWXVVeEJpc1pGcDkKd05nRkRMYmliUVRqWGNSN1U0aUMxd1FFNW1qY2cyS2FyNUFmaXJBejB6M3hvRTdoQmZEV014N3BjcEMwd3BiQwpLVlR3bExHWEwvOUovbmNSSVdRQWFpNExsREpvUkZ5aWZlSnVsR1c5ejl5aDdWbWEyQjRaMHZ4QzJrejJIZnQ5CkZCa2g3ai9DajYzaXlSK1R3RmxmMlhpbG1kOWNiSHY2T25hcWFsR3NIQ1N0NWJZQ0wybmlvN2thWEZhRDJ1b3EKc3Z4R0txRlhYZXZ4L0tmRTFuMnpvYWQzNmI2bnlVWGt3cFZGTEhMQ0xPT1Z6Q3dzbGwrTVNqbHJoajZsdVFQOAoxZlBTbGxWeWttYW1XbDBYRms2ZGN4VGRKUWtrUVJrQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJRZm5FeEcrak43NkNWNUtYS3Q1c2FGWW5oUFZ6QU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBeUE3Q1FZVlFQVFhFZHlKd2haTERlYTNmQXh6YlhqOGRFYWlGNE00S0oxaFBpcFFCamMwUEpsVGEyRWNWCnYxdHpkMkJRa0dxRzlNd2t1TVBYanRCUU5zUzZqRHJ1ZENyRW9vRzNhckF0dkRGUUx2WVhVekVOdVB2Q1lsYVgKOEZvbkJGMzBCa0o5cVZiU2VsVnZIcGhLMnpVSFhsaVF2aFFUOE9UbE5QNVJpV2R6V2NhdEQ2VGtTTDB4WXZhagpRdFZDU2ordzlmbHExQ1Y3OVljYkJOZUNQTlkvMkg2OEZRRXVxK2h6SitVaWowS1B6REtVUGFOWURScDVHUElzClNscWx0Y1J6eGJlTXM2OWlVOUpWbERpMnVsNTh2bmcwWUJ4cjlRZ3dkcDQ3S2FxT2F3eDJOZ2psQmhnRUdBaysKbGRDTHFBUjlXSEo3Nm40NUpnSTlLdUJ0eGc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRUldVSFlUeUJJanFrVGZFVG5sREFvREFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGd3TWpBeE5URXhNRm9YRFRNeE1EY3pNVEF4TlRFeApNRm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQUtpcXFPNTU0MDFTVGVxeHRTRTZqU0RsVFl1SnNjV0R3TGJySWMwd0RZVWZwZlE1WVpSQXJ0Q3YKTGV1SGl2V1RDelNFRjE2bEJRWmJ0bE16cVhDVlp6Um1jVU1JVW0zeUoxaCtSSWNlS2JrMHpoNytCamJLNGhhQQpDSGtjVkFKc3Ria2hXYjlwTHc4ejV4OE5qK0QwbitrWmYvbHovZGZzSGc4ZGFNajUyOCtyeEQ5S0ZFaXR2WVl1ClZuWDBaZ1g4S2lTaTY2clhhWktZWVlsYjE2elZLZjlGb1JIYnRIWFdwcUFsSUNWTGh0THA4OWcwZDZHamFjYUkKYkczRHY0ai9kNktPK0M0RksyNURRSkdjYjR3K3NlYVNMUkRaOGJsNHE5Wjhld3N6UG9PYmhtTHdOVnU2dEJqdgpMMEFKdFNKbjZITTErMnNBa2dpZ3p1Z3VJbkJ2TllVQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJRZTQ5aEJxZkcvMlY5UlRBM2VDam1rVWh4TnJEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBYnA4clhSY2NQRjF4QkJ4ZEhUL0s5cEZEc0JQSjhIT0o0UStKNTU0UEswOE5ONlMzdHNpdFpWVHRiejFyCnIwbTNsTUpZcHBiMEh1V3ROWHJtKzc2MWF5NG01cjQ5aXVMcXN1dVpzL2d4QmhOcWh0clNRb1dSVDdnOFBXd2EKRWtCb1M2ZWdudjQ5ZGVJMFdPeGphRTU4cHk4WDc3REVpVkpPNi9oNmpBdGE0MU5tZmhsRS83a0dsZEN3bkdFdQpTdjV3UEEvbWxEMXYyczlkb3NDOXJvNTJvYmN3WEhOdUxRWjZHNmhweVNQalNEaWk2bjRQV3pPUHpKTG5EYUJjCjhYWUVaSVMxckk5b3BUUFZiTUxiZ2Vva2NXa3JIRlhqWVZNUENmV0NIK01xMzEyWjdOaUw3MUVRWFFscWVabFcKUkVSRFZvZGFDakU4bURkeC9aczdFS0tLN0E9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
     service:
       name: kuma-control-plane
       namespace: kuma-system
@@ -919,7 +916,7 @@ webhooks:
 - admissionReviewVersions:
   - v1beta1
   clientConfig:
-    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRTlcrd0VUd0tDTUVSV3RXSncvVjBNREFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGN3T0RBek5ESTBORm9YRFRNeE1EY3dOakF6TkRJMApORm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQU5EdFUxNXl1R2NPZjFRbXZRNjN1ZE10NUhNVjB3bWg5VjMvdTZkWHRlK3NPWXVVeEJpc1pGcDkKd05nRkRMYmliUVRqWGNSN1U0aUMxd1FFNW1qY2cyS2FyNUFmaXJBejB6M3hvRTdoQmZEV014N3BjcEMwd3BiQwpLVlR3bExHWEwvOUovbmNSSVdRQWFpNExsREpvUkZ5aWZlSnVsR1c5ejl5aDdWbWEyQjRaMHZ4QzJrejJIZnQ5CkZCa2g3ai9DajYzaXlSK1R3RmxmMlhpbG1kOWNiSHY2T25hcWFsR3NIQ1N0NWJZQ0wybmlvN2thWEZhRDJ1b3EKc3Z4R0txRlhYZXZ4L0tmRTFuMnpvYWQzNmI2bnlVWGt3cFZGTEhMQ0xPT1Z6Q3dzbGwrTVNqbHJoajZsdVFQOAoxZlBTbGxWeWttYW1XbDBYRms2ZGN4VGRKUWtrUVJrQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJRZm5FeEcrak43NkNWNUtYS3Q1c2FGWW5oUFZ6QU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBeUE3Q1FZVlFQVFhFZHlKd2haTERlYTNmQXh6YlhqOGRFYWlGNE00S0oxaFBpcFFCamMwUEpsVGEyRWNWCnYxdHpkMkJRa0dxRzlNd2t1TVBYanRCUU5zUzZqRHJ1ZENyRW9vRzNhckF0dkRGUUx2WVhVekVOdVB2Q1lsYVgKOEZvbkJGMzBCa0o5cVZiU2VsVnZIcGhLMnpVSFhsaVF2aFFUOE9UbE5QNVJpV2R6V2NhdEQ2VGtTTDB4WXZhagpRdFZDU2ordzlmbHExQ1Y3OVljYkJOZUNQTlkvMkg2OEZRRXVxK2h6SitVaWowS1B6REtVUGFOWURScDVHUElzClNscWx0Y1J6eGJlTXM2OWlVOUpWbERpMnVsNTh2bmcwWUJ4cjlRZ3dkcDQ3S2FxT2F3eDJOZ2psQmhnRUdBaysKbGRDTHFBUjlXSEo3Nm40NUpnSTlLdUJ0eGc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRUldVSFlUeUJJanFrVGZFVG5sREFvREFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGd3TWpBeE5URXhNRm9YRFRNeE1EY3pNVEF4TlRFeApNRm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQUtpcXFPNTU0MDFTVGVxeHRTRTZqU0RsVFl1SnNjV0R3TGJySWMwd0RZVWZwZlE1WVpSQXJ0Q3YKTGV1SGl2V1RDelNFRjE2bEJRWmJ0bE16cVhDVlp6Um1jVU1JVW0zeUoxaCtSSWNlS2JrMHpoNytCamJLNGhhQQpDSGtjVkFKc3Ria2hXYjlwTHc4ejV4OE5qK0QwbitrWmYvbHovZGZzSGc4ZGFNajUyOCtyeEQ5S0ZFaXR2WVl1ClZuWDBaZ1g4S2lTaTY2clhhWktZWVlsYjE2elZLZjlGb1JIYnRIWFdwcUFsSUNWTGh0THA4OWcwZDZHamFjYUkKYkczRHY0ai9kNktPK0M0RksyNURRSkdjYjR3K3NlYVNMUkRaOGJsNHE5Wjhld3N6UG9PYmhtTHdOVnU2dEJqdgpMMEFKdFNKbjZITTErMnNBa2dpZ3p1Z3VJbkJ2TllVQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJRZTQ5aEJxZkcvMlY5UlRBM2VDam1rVWh4TnJEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBYnA4clhSY2NQRjF4QkJ4ZEhUL0s5cEZEc0JQSjhIT0o0UStKNTU0UEswOE5ONlMzdHNpdFpWVHRiejFyCnIwbTNsTUpZcHBiMEh1V3ROWHJtKzc2MWF5NG01cjQ5aXVMcXN1dVpzL2d4QmhOcWh0clNRb1dSVDdnOFBXd2EKRWtCb1M2ZWdudjQ5ZGVJMFdPeGphRTU4cHk4WDc3REVpVkpPNi9oNmpBdGE0MU5tZmhsRS83a0dsZEN3bkdFdQpTdjV3UEEvbWxEMXYyczlkb3NDOXJvNTJvYmN3WEhOdUxRWjZHNmhweVNQalNEaWk2bjRQV3pPUHpKTG5EYUJjCjhYWUVaSVMxckk5b3BUUFZiTUxiZ2Vva2NXa3JIRlhqWVZNUENmV0NIK01xMzEyWjdOaUw3MUVRWFFscWVabFcKUkVSRFZvZGFDakU4bURkeC9aczdFS0tLN0E9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
     service:
       name: kuma-control-plane
       namespace: kuma-system
@@ -949,7 +946,7 @@ webhooks:
 - admissionReviewVersions:
   - v1beta1
   clientConfig:
-    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRTlcrd0VUd0tDTUVSV3RXSncvVjBNREFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGN3T0RBek5ESTBORm9YRFRNeE1EY3dOakF6TkRJMApORm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQU5EdFUxNXl1R2NPZjFRbXZRNjN1ZE10NUhNVjB3bWg5VjMvdTZkWHRlK3NPWXVVeEJpc1pGcDkKd05nRkRMYmliUVRqWGNSN1U0aUMxd1FFNW1qY2cyS2FyNUFmaXJBejB6M3hvRTdoQmZEV014N3BjcEMwd3BiQwpLVlR3bExHWEwvOUovbmNSSVdRQWFpNExsREpvUkZ5aWZlSnVsR1c5ejl5aDdWbWEyQjRaMHZ4QzJrejJIZnQ5CkZCa2g3ai9DajYzaXlSK1R3RmxmMlhpbG1kOWNiSHY2T25hcWFsR3NIQ1N0NWJZQ0wybmlvN2thWEZhRDJ1b3EKc3Z4R0txRlhYZXZ4L0tmRTFuMnpvYWQzNmI2bnlVWGt3cFZGTEhMQ0xPT1Z6Q3dzbGwrTVNqbHJoajZsdVFQOAoxZlBTbGxWeWttYW1XbDBYRms2ZGN4VGRKUWtrUVJrQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJRZm5FeEcrak43NkNWNUtYS3Q1c2FGWW5oUFZ6QU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBeUE3Q1FZVlFQVFhFZHlKd2haTERlYTNmQXh6YlhqOGRFYWlGNE00S0oxaFBpcFFCamMwUEpsVGEyRWNWCnYxdHpkMkJRa0dxRzlNd2t1TVBYanRCUU5zUzZqRHJ1ZENyRW9vRzNhckF0dkRGUUx2WVhVekVOdVB2Q1lsYVgKOEZvbkJGMzBCa0o5cVZiU2VsVnZIcGhLMnpVSFhsaVF2aFFUOE9UbE5QNVJpV2R6V2NhdEQ2VGtTTDB4WXZhagpRdFZDU2ordzlmbHExQ1Y3OVljYkJOZUNQTlkvMkg2OEZRRXVxK2h6SitVaWowS1B6REtVUGFOWURScDVHUElzClNscWx0Y1J6eGJlTXM2OWlVOUpWbERpMnVsNTh2bmcwWUJ4cjlRZ3dkcDQ3S2FxT2F3eDJOZ2psQmhnRUdBaysKbGRDTHFBUjlXSEo3Nm40NUpnSTlLdUJ0eGc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRUldVSFlUeUJJanFrVGZFVG5sREFvREFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGd3TWpBeE5URXhNRm9YRFRNeE1EY3pNVEF4TlRFeApNRm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQUtpcXFPNTU0MDFTVGVxeHRTRTZqU0RsVFl1SnNjV0R3TGJySWMwd0RZVWZwZlE1WVpSQXJ0Q3YKTGV1SGl2V1RDelNFRjE2bEJRWmJ0bE16cVhDVlp6Um1jVU1JVW0zeUoxaCtSSWNlS2JrMHpoNytCamJLNGhhQQpDSGtjVkFKc3Ria2hXYjlwTHc4ejV4OE5qK0QwbitrWmYvbHovZGZzSGc4ZGFNajUyOCtyeEQ5S0ZFaXR2WVl1ClZuWDBaZ1g4S2lTaTY2clhhWktZWVlsYjE2elZLZjlGb1JIYnRIWFdwcUFsSUNWTGh0THA4OWcwZDZHamFjYUkKYkczRHY0ai9kNktPK0M0RksyNURRSkdjYjR3K3NlYVNMUkRaOGJsNHE5Wjhld3N6UG9PYmhtTHdOVnU2dEJqdgpMMEFKdFNKbjZITTErMnNBa2dpZ3p1Z3VJbkJ2TllVQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJRZTQ5aEJxZkcvMlY5UlRBM2VDam1rVWh4TnJEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBYnA4clhSY2NQRjF4QkJ4ZEhUL0s5cEZEc0JQSjhIT0o0UStKNTU0UEswOE5ONlMzdHNpdFpWVHRiejFyCnIwbTNsTUpZcHBiMEh1V3ROWHJtKzc2MWF5NG01cjQ5aXVMcXN1dVpzL2d4QmhOcWh0clNRb1dSVDdnOFBXd2EKRWtCb1M2ZWdudjQ5ZGVJMFdPeGphRTU4cHk4WDc3REVpVkpPNi9oNmpBdGE0MU5tZmhsRS83a0dsZEN3bkdFdQpTdjV3UEEvbWxEMXYyczlkb3NDOXJvNTJvYmN3WEhOdUxRWjZHNmhweVNQalNEaWk2bjRQV3pPUHpKTG5EYUJjCjhYWUVaSVMxckk5b3BUUFZiTUxiZ2Vva2NXa3JIRlhqWVZNUENmV0NIK01xMzEyWjdOaUw3MUVRWFFscWVabFcKUkVSRFZvZGFDakU4bURkeC9aczdFS0tLN0E9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
     service:
       name: kuma-control-plane
       namespace: kuma-system
@@ -974,15 +971,15 @@ metadata:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kuma
-    app.kubernetes.io/version: 1.2.1
-    helm.sh/chart: kuma-0.6.1
+    app.kubernetes.io/version: 1.2.3
+    helm.sh/chart: kuma-0.6.3
   name: kuma-validating-webhook-configuration
   namespace: kuma-system
 webhooks:
 - admissionReviewVersions:
   - v1beta1
   clientConfig:
-    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRTlcrd0VUd0tDTUVSV3RXSncvVjBNREFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGN3T0RBek5ESTBORm9YRFRNeE1EY3dOakF6TkRJMApORm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQU5EdFUxNXl1R2NPZjFRbXZRNjN1ZE10NUhNVjB3bWg5VjMvdTZkWHRlK3NPWXVVeEJpc1pGcDkKd05nRkRMYmliUVRqWGNSN1U0aUMxd1FFNW1qY2cyS2FyNUFmaXJBejB6M3hvRTdoQmZEV014N3BjcEMwd3BiQwpLVlR3bExHWEwvOUovbmNSSVdRQWFpNExsREpvUkZ5aWZlSnVsR1c5ejl5aDdWbWEyQjRaMHZ4QzJrejJIZnQ5CkZCa2g3ai9DajYzaXlSK1R3RmxmMlhpbG1kOWNiSHY2T25hcWFsR3NIQ1N0NWJZQ0wybmlvN2thWEZhRDJ1b3EKc3Z4R0txRlhYZXZ4L0tmRTFuMnpvYWQzNmI2bnlVWGt3cFZGTEhMQ0xPT1Z6Q3dzbGwrTVNqbHJoajZsdVFQOAoxZlBTbGxWeWttYW1XbDBYRms2ZGN4VGRKUWtrUVJrQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJRZm5FeEcrak43NkNWNUtYS3Q1c2FGWW5oUFZ6QU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBeUE3Q1FZVlFQVFhFZHlKd2haTERlYTNmQXh6YlhqOGRFYWlGNE00S0oxaFBpcFFCamMwUEpsVGEyRWNWCnYxdHpkMkJRa0dxRzlNd2t1TVBYanRCUU5zUzZqRHJ1ZENyRW9vRzNhckF0dkRGUUx2WVhVekVOdVB2Q1lsYVgKOEZvbkJGMzBCa0o5cVZiU2VsVnZIcGhLMnpVSFhsaVF2aFFUOE9UbE5QNVJpV2R6V2NhdEQ2VGtTTDB4WXZhagpRdFZDU2ordzlmbHExQ1Y3OVljYkJOZUNQTlkvMkg2OEZRRXVxK2h6SitVaWowS1B6REtVUGFOWURScDVHUElzClNscWx0Y1J6eGJlTXM2OWlVOUpWbERpMnVsNTh2bmcwWUJ4cjlRZ3dkcDQ3S2FxT2F3eDJOZ2psQmhnRUdBaysKbGRDTHFBUjlXSEo3Nm40NUpnSTlLdUJ0eGc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRUldVSFlUeUJJanFrVGZFVG5sREFvREFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGd3TWpBeE5URXhNRm9YRFRNeE1EY3pNVEF4TlRFeApNRm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQUtpcXFPNTU0MDFTVGVxeHRTRTZqU0RsVFl1SnNjV0R3TGJySWMwd0RZVWZwZlE1WVpSQXJ0Q3YKTGV1SGl2V1RDelNFRjE2bEJRWmJ0bE16cVhDVlp6Um1jVU1JVW0zeUoxaCtSSWNlS2JrMHpoNytCamJLNGhhQQpDSGtjVkFKc3Ria2hXYjlwTHc4ejV4OE5qK0QwbitrWmYvbHovZGZzSGc4ZGFNajUyOCtyeEQ5S0ZFaXR2WVl1ClZuWDBaZ1g4S2lTaTY2clhhWktZWVlsYjE2elZLZjlGb1JIYnRIWFdwcUFsSUNWTGh0THA4OWcwZDZHamFjYUkKYkczRHY0ai9kNktPK0M0RksyNURRSkdjYjR3K3NlYVNMUkRaOGJsNHE5Wjhld3N6UG9PYmhtTHdOVnU2dEJqdgpMMEFKdFNKbjZITTErMnNBa2dpZ3p1Z3VJbkJ2TllVQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJRZTQ5aEJxZkcvMlY5UlRBM2VDam1rVWh4TnJEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBYnA4clhSY2NQRjF4QkJ4ZEhUL0s5cEZEc0JQSjhIT0o0UStKNTU0UEswOE5ONlMzdHNpdFpWVHRiejFyCnIwbTNsTUpZcHBiMEh1V3ROWHJtKzc2MWF5NG01cjQ5aXVMcXN1dVpzL2d4QmhOcWh0clNRb1dSVDdnOFBXd2EKRWtCb1M2ZWdudjQ5ZGVJMFdPeGphRTU4cHk4WDc3REVpVkpPNi9oNmpBdGE0MU5tZmhsRS83a0dsZEN3bkdFdQpTdjV3UEEvbWxEMXYyczlkb3NDOXJvNTJvYmN3WEhOdUxRWjZHNmhweVNQalNEaWk2bjRQV3pPUHpKTG5EYUJjCjhYWUVaSVMxckk5b3BUUFZiTUxiZ2Vva2NXa3JIRlhqWVZNUENmV0NIK01xMzEyWjdOaUw3MUVRWFFscWVabFcKUkVSRFZvZGFDakU4bURkeC9aczdFS0tLN0E9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
     service:
       name: kuma-control-plane
       namespace: kuma-system
@@ -1017,7 +1014,7 @@ webhooks:
 - admissionReviewVersions:
   - v1beta1
   clientConfig:
-    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRTlcrd0VUd0tDTUVSV3RXSncvVjBNREFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGN3T0RBek5ESTBORm9YRFRNeE1EY3dOakF6TkRJMApORm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQU5EdFUxNXl1R2NPZjFRbXZRNjN1ZE10NUhNVjB3bWg5VjMvdTZkWHRlK3NPWXVVeEJpc1pGcDkKd05nRkRMYmliUVRqWGNSN1U0aUMxd1FFNW1qY2cyS2FyNUFmaXJBejB6M3hvRTdoQmZEV014N3BjcEMwd3BiQwpLVlR3bExHWEwvOUovbmNSSVdRQWFpNExsREpvUkZ5aWZlSnVsR1c5ejl5aDdWbWEyQjRaMHZ4QzJrejJIZnQ5CkZCa2g3ai9DajYzaXlSK1R3RmxmMlhpbG1kOWNiSHY2T25hcWFsR3NIQ1N0NWJZQ0wybmlvN2thWEZhRDJ1b3EKc3Z4R0txRlhYZXZ4L0tmRTFuMnpvYWQzNmI2bnlVWGt3cFZGTEhMQ0xPT1Z6Q3dzbGwrTVNqbHJoajZsdVFQOAoxZlBTbGxWeWttYW1XbDBYRms2ZGN4VGRKUWtrUVJrQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJRZm5FeEcrak43NkNWNUtYS3Q1c2FGWW5oUFZ6QU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBeUE3Q1FZVlFQVFhFZHlKd2haTERlYTNmQXh6YlhqOGRFYWlGNE00S0oxaFBpcFFCamMwUEpsVGEyRWNWCnYxdHpkMkJRa0dxRzlNd2t1TVBYanRCUU5zUzZqRHJ1ZENyRW9vRzNhckF0dkRGUUx2WVhVekVOdVB2Q1lsYVgKOEZvbkJGMzBCa0o5cVZiU2VsVnZIcGhLMnpVSFhsaVF2aFFUOE9UbE5QNVJpV2R6V2NhdEQ2VGtTTDB4WXZhagpRdFZDU2ordzlmbHExQ1Y3OVljYkJOZUNQTlkvMkg2OEZRRXVxK2h6SitVaWowS1B6REtVUGFOWURScDVHUElzClNscWx0Y1J6eGJlTXM2OWlVOUpWbERpMnVsNTh2bmcwWUJ4cjlRZ3dkcDQ3S2FxT2F3eDJOZ2psQmhnRUdBaysKbGRDTHFBUjlXSEo3Nm40NUpnSTlLdUJ0eGc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRUldVSFlUeUJJanFrVGZFVG5sREFvREFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGd3TWpBeE5URXhNRm9YRFRNeE1EY3pNVEF4TlRFeApNRm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQUtpcXFPNTU0MDFTVGVxeHRTRTZqU0RsVFl1SnNjV0R3TGJySWMwd0RZVWZwZlE1WVpSQXJ0Q3YKTGV1SGl2V1RDelNFRjE2bEJRWmJ0bE16cVhDVlp6Um1jVU1JVW0zeUoxaCtSSWNlS2JrMHpoNytCamJLNGhhQQpDSGtjVkFKc3Ria2hXYjlwTHc4ejV4OE5qK0QwbitrWmYvbHovZGZzSGc4ZGFNajUyOCtyeEQ5S0ZFaXR2WVl1ClZuWDBaZ1g4S2lTaTY2clhhWktZWVlsYjE2elZLZjlGb1JIYnRIWFdwcUFsSUNWTGh0THA4OWcwZDZHamFjYUkKYkczRHY0ai9kNktPK0M0RksyNURRSkdjYjR3K3NlYVNMUkRaOGJsNHE5Wjhld3N6UG9PYmhtTHdOVnU2dEJqdgpMMEFKdFNKbjZITTErMnNBa2dpZ3p1Z3VJbkJ2TllVQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJRZTQ5aEJxZkcvMlY5UlRBM2VDam1rVWh4TnJEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBYnA4clhSY2NQRjF4QkJ4ZEhUL0s5cEZEc0JQSjhIT0o0UStKNTU0UEswOE5ONlMzdHNpdFpWVHRiejFyCnIwbTNsTUpZcHBiMEh1V3ROWHJtKzc2MWF5NG01cjQ5aXVMcXN1dVpzL2d4QmhOcWh0clNRb1dSVDdnOFBXd2EKRWtCb1M2ZWdudjQ5ZGVJMFdPeGphRTU4cHk4WDc3REVpVkpPNi9oNmpBdGE0MU5tZmhsRS83a0dsZEN3bkdFdQpTdjV3UEEvbWxEMXYyczlkb3NDOXJvNTJvYmN3WEhOdUxRWjZHNmhweVNQalNEaWk2bjRQV3pPUHpKTG5EYUJjCjhYWUVaSVMxckk5b3BUUFZiTUxiZ2Vva2NXa3JIRlhqWVZNUENmV0NIK01xMzEyWjdOaUw3MUVRWFFscWVabFcKUkVSRFZvZGFDakU4bURkeC9aczdFS0tLN0E9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
     service:
       name: kuma-control-plane
       namespace: kuma-system
@@ -1038,7 +1035,7 @@ webhooks:
 - admissionReviewVersions:
   - v1beta1
   clientConfig:
-    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRTlcrd0VUd0tDTUVSV3RXSncvVjBNREFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGN3T0RBek5ESTBORm9YRFRNeE1EY3dOakF6TkRJMApORm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQU5EdFUxNXl1R2NPZjFRbXZRNjN1ZE10NUhNVjB3bWg5VjMvdTZkWHRlK3NPWXVVeEJpc1pGcDkKd05nRkRMYmliUVRqWGNSN1U0aUMxd1FFNW1qY2cyS2FyNUFmaXJBejB6M3hvRTdoQmZEV014N3BjcEMwd3BiQwpLVlR3bExHWEwvOUovbmNSSVdRQWFpNExsREpvUkZ5aWZlSnVsR1c5ejl5aDdWbWEyQjRaMHZ4QzJrejJIZnQ5CkZCa2g3ai9DajYzaXlSK1R3RmxmMlhpbG1kOWNiSHY2T25hcWFsR3NIQ1N0NWJZQ0wybmlvN2thWEZhRDJ1b3EKc3Z4R0txRlhYZXZ4L0tmRTFuMnpvYWQzNmI2bnlVWGt3cFZGTEhMQ0xPT1Z6Q3dzbGwrTVNqbHJoajZsdVFQOAoxZlBTbGxWeWttYW1XbDBYRms2ZGN4VGRKUWtrUVJrQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJRZm5FeEcrak43NkNWNUtYS3Q1c2FGWW5oUFZ6QU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBeUE3Q1FZVlFQVFhFZHlKd2haTERlYTNmQXh6YlhqOGRFYWlGNE00S0oxaFBpcFFCamMwUEpsVGEyRWNWCnYxdHpkMkJRa0dxRzlNd2t1TVBYanRCUU5zUzZqRHJ1ZENyRW9vRzNhckF0dkRGUUx2WVhVekVOdVB2Q1lsYVgKOEZvbkJGMzBCa0o5cVZiU2VsVnZIcGhLMnpVSFhsaVF2aFFUOE9UbE5QNVJpV2R6V2NhdEQ2VGtTTDB4WXZhagpRdFZDU2ordzlmbHExQ1Y3OVljYkJOZUNQTlkvMkg2OEZRRXVxK2h6SitVaWowS1B6REtVUGFOWURScDVHUElzClNscWx0Y1J6eGJlTXM2OWlVOUpWbERpMnVsNTh2bmcwWUJ4cjlRZ3dkcDQ3S2FxT2F3eDJOZ2psQmhnRUdBaysKbGRDTHFBUjlXSEo3Nm40NUpnSTlLdUJ0eGc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRUldVSFlUeUJJanFrVGZFVG5sREFvREFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNRGd3TWpBeE5URXhNRm9YRFRNeE1EY3pNVEF4TlRFeApNRm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQUtpcXFPNTU0MDFTVGVxeHRTRTZqU0RsVFl1SnNjV0R3TGJySWMwd0RZVWZwZlE1WVpSQXJ0Q3YKTGV1SGl2V1RDelNFRjE2bEJRWmJ0bE16cVhDVlp6Um1jVU1JVW0zeUoxaCtSSWNlS2JrMHpoNytCamJLNGhhQQpDSGtjVkFKc3Ria2hXYjlwTHc4ejV4OE5qK0QwbitrWmYvbHovZGZzSGc4ZGFNajUyOCtyeEQ5S0ZFaXR2WVl1ClZuWDBaZ1g4S2lTaTY2clhhWktZWVlsYjE2elZLZjlGb1JIYnRIWFdwcUFsSUNWTGh0THA4OWcwZDZHamFjYUkKYkczRHY0ai9kNktPK0M0RksyNURRSkdjYjR3K3NlYVNMUkRaOGJsNHE5Wjhld3N6UG9PYmhtTHdOVnU2dEJqdgpMMEFKdFNKbjZITTErMnNBa2dpZ3p1Z3VJbkJ2TllVQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJRZTQ5aEJxZkcvMlY5UlRBM2VDam1rVWh4TnJEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBYnA4clhSY2NQRjF4QkJ4ZEhUL0s5cEZEc0JQSjhIT0o0UStKNTU0UEswOE5ONlMzdHNpdFpWVHRiejFyCnIwbTNsTUpZcHBiMEh1V3ROWHJtKzc2MWF5NG01cjQ5aXVMcXN1dVpzL2d4QmhOcWh0clNRb1dSVDdnOFBXd2EKRWtCb1M2ZWdudjQ5ZGVJMFdPeGphRTU4cHk4WDc3REVpVkpPNi9oNmpBdGE0MU5tZmhsRS83a0dsZEN3bkdFdQpTdjV3UEEvbWxEMXYyczlkb3NDOXJvNTJvYmN3WEhOdUxRWjZHNmhweVNQalNEaWk2bjRQV3pPUHpKTG5EYUJjCjhYWUVaSVMxckk5b3BUUFZiTUxiZ2Vva2NXa3JIRlhqWVZNUENmV0NIK01xMzEyWjdOaUw3MUVRWFFscWVabFcKUkVSRFZvZGFDakU4bURkeC9aczdFS0tLN0E9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
     service:
       name: kuma-control-plane
       namespace: kuma-system

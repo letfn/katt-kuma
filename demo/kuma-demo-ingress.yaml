@@ -1,5 +1,16 @@
 ---
 apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: traefik-forward-auth
+  namespace: kuma-demo
+spec:
+  forwardAuth:
+    address: http://traefik-forward-auth.traefik.svc.cluster.local:4181
+    authResponseHeaders:
+      - X-Forwarded-User
+---
+apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: kuma-demo

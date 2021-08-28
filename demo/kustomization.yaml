@@ -6,3 +6,4 @@ commonAnnotations:
 
 resources:
   - kuma-demo.yaml
+  - kuma-demo-ingress.yaml

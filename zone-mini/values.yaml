@@ -1,6 +1,0 @@
-controlPlane:
-  mode: zone
-  zone: mini
-  kdsGlobalAddress: grpcs://100.101.28.35:5685
-ingress:
-  enabled: true

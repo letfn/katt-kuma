@@ -1,6 +1,6 @@
 controlPlane:
   mode: zone
-  zone: kind
-  kdsGlobalAddress: grpcs://100.101.28.35:5685
+  zone: TODO
+  kdsGlobalAddress: grpcs://100.100.100.100:5685
 ingress:
   enabled: true

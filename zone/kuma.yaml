@@ -1,3 +1,573 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: circuitbreakers.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: CircuitBreaker
+    plural: circuitbreakers
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: CircuitBreaker is the Schema for the circuitbreaker API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: dataplaneinsights.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: DataplaneInsight
+    plural: dataplaneinsights
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: DataplaneInsight is the Schema for the dataplane insights API
+        properties:
+          mesh:
+            type: string
+          status:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: dataplanes.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: Dataplane
+    plural: dataplanes
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Dataplane is the Schema for the dataplanes API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: externalservices.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: ExternalService
+    plural: externalservices
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: faultinjections.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: FaultInjection
+    plural: faultinjections
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: FaultInjection is the Schema for the faultinjections API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: healthchecks.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: HealthCheck
+    plural: healthchecks
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: HealthCheck is the Schema for the healthchecks API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: meshes.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: Mesh
+    plural: meshes
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Mesh is the Schema for the meshes API
+        properties:
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: meshinsights.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: MeshInsight
+    plural: meshinsights
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: MeshInsight is the Schema for the meshes insights API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: proxytemplates.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: ProxyTemplate
+    plural: proxytemplates
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ProxyTemplate is the Schema for the proxytemplates API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: ratelimits.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: RateLimit
+    plural: ratelimits
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: RateLimit is the Schema for the ratelimits API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: retries.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: Retry
+    plural: retries
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Retry is the Schema for the retries API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: serviceinsights.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: ServiceInsight
+    plural: serviceinsights
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ServiceInsight is the Schema for the services insights API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: timeouts.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: Timeout
+    plural: timeouts
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Timeout is the Schema for the timeout API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: trafficlogs.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: TrafficLog
+    plural: trafficlogs
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: TrafficLog is the Schema for the trafficlogs API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: trafficpermissions.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: TrafficPermission
+    plural: trafficpermissions
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: TrafficPermission is the Schema for the trafficpermissions API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: trafficroutes.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: TrafficRoute
+    plural: trafficroutes
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: TrafficRoute is the Schema for the trafficroutes API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: traffictraces.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: TrafficTrace
+    plural: traffictraces
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: TrafficTrace is the Schema for the traffictraces API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: virtualoutbounds.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: VirtualOutbound
+    plural: virtualoutbounds
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: VirtualOutbound is the Schema for the virtualoutbounds API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: zoneingresses.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: ZoneIngress
+    plural: zoneingresses
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ZoneIngress is the Schema for the zone ingress API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: zoneingressinsights.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: ZoneIngressInsight
+    plural: zoneingressinsights
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ZoneIngressInsight is the Schema for the zone ingress insight
+          API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: zoneinsights.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: ZoneInsight
+    plural: zoneinsights
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ZoneInsight is the Schema for the zone insight API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: zones.kuma.io
+spec:
+  group: kuma.io
+  names:
+    kind: Zone
+    plural: zones
+  scope: Cluster
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Zone is the Schema for the zone API
+        properties:
+          mesh:
+            type: string
+          spec:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+        type: object
+    served: true
+    storage: true
+---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -440,9 +1010,9 @@ metadata:
 ---
 apiVersion: v1
 data:
-  ca.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRQTQ3WU1DRnBqTDdxVW13SjViaEkrVEFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNVEF3TnpBek1Ua3hNRm9YRFRNeE1UQXdOVEF6TVRreApNRm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQU1kalNwdWI1VXpObk9lakdhbkZ4TDd2dEZWZWFCcGhMblk0T1hSR293dDhZeXhQZUhPa3ByL28KN0JlTXZJNmFxSnVJdmlaZFFQRjRRTUxoV1FpeE94cVhZUlNUQUJZaDY3d1FKQ1JFb0V6TFAzQ3Noc2RDc3FnMApNa25tc1V2VkEzdzNKcjRTMit2NVdHd2JLcjYzVFM3b2hDcXVJQTZySi8zRmd0U0QxQlJCb0NLYkVnMGE1OTZRClFJem1PSXd6azhLRkh0LytPSXd3UCtkV3o3NDJhSncwS2cyMWcrY1pJeEtSRzRMVGVXZmd4empqSFpyUFc1OWoKYnhubUM3Q2FsN1VVdk0zQ2IreEpGbVQwZUFLOVk3K3huZmREWWJxQ1hZTThSRk9VOEtmQzN0QlpsS1dwZkpEUgpRRGZONmk4dWhyeU94MnB1U1hFaWhVNy9EWWhIQU5FQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJReFhFa3ZiSzZxMFNvTDl4bnh5RUdHUkxEV2dqQU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBdjBLbzNpbnJEcnpLWUo2b2crVisvYm54S1g4bDJlR1I0SjJZR3pvZ29rV1AzTkhIaTl4MFM4TE0zT1Q4CmxkVWVmMlFsNXplZ0U5WnQzOVpRUU4yeVRlcDQ4RnkrSkVTMWUyK2xaTUxOT2xwWmlNTWErK2NKclFlUWJsenIKNU5JNmpnS0NnYkFna0RSOU1NVElTU08xYk53L0dwdms1UHNyMmp3dndHdEFDZ0dSZ2N1SEhjU1VOYWJKakdaNApJWDhBWlo2TjFweE9wbmc1eUVydHg4MDRBd1dWdlFoM1NtRDBFcm9pS2NlNVh3YnZaZjYyZ0Z6Vm1STXNrWVNmCldiZXJMVUg2b05xZWNYcVpsZlUyMTJHUGMxSDRYTG1uMFNiTjlkaWZBMEVxay93QW9GTndOZmpVcEVYc09iUVcKU2RwT1BxSlpGclB1TXprR2M4RFBGNnJjRWc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
-  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURhekNDQWxPZ0F3SUJBZ0lSQU5SUHNieHI2VXRJWFMzTittR21ydWt3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEV3TURjd016RTVNVEJhRncwek1URXdNRFV3TXpFNQpNVEJhTUIweEd6QVpCZ05WQkFNVEVtdDFiV0V0WTI5dWRISnZiQzF3YkdGdVpUQ0NBU0l3RFFZSktvWklodmNOCkFRRUJCUUFEZ2dFUEFEQ0NBUW9DZ2dFQkFMV054UGNlK09xSVFVQW8yUW5seE1QUGQ1YXI1cHJ4MlNjdWh1RHYKVzdBOTI2dVAyQWpHbGpsOVh4Y2RDdUp3YVFqK1hkRWpUUk9yTWsvb3NzUlgwQ0tBTE1LZksvU0ZJbVBPUnFLNwpYeEZ4YmRERU9ybVNIUlUwRVVGVkhzeXhkK3cvN3hDaTV6QWFvL3BCeTV2RXJLREFTM1prdWIya3MvUDRnQXNZCmMyRjBxK3dQY1o5Sk9YY1VlSTgvdFlPTUpPUjRwaVhTVjNoSm5IbkVXUGZOTjh2eWc1YVFwYWFWVDN0VmVUdjAKR3c4MTk4VFJDNm8zcnlBNHJpeVVRUmE0VlRNV2NuSTlwaTQza1pRWFlDVFhSTU1ESitkQ3dFeUFZN3U1L3BlVAo3TDBQMm1lWllOdE5KS1RhRGFpTy8zVjVLc2x2MGdVdkhyeDhEeTdLTjJWWWcra0NBd0VBQWFPQnNEQ0JyVEFPCkJnTlZIUThCQWY4RUJBTUNCYUF3SFFZRFZSMGxCQll3RkFZSUt3WUJCUVVIQXdFR0NDc0dBUVVGQndNQ01Bd0cKQTFVZEV3RUIvd1FDTUFBd0h3WURWUjBqQkJnd0ZvQVVNVnhKTDJ5dXF0RXFDL2NaOGNoQmhrU3cxb0l3VFFZRApWUjBSQkVZd1JJSWVhM1Z0WVMxamIyNTBjbTlzTFhCc1lXNWxMbXQxYldFdGMzbHpkR1Z0Z2lKcmRXMWhMV052CmJuUnliMnd0Y0d4aGJtVXVhM1Z0WVMxemVYTjBaVzB1YzNaak1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQksKcUxJSFBzZ1FEN1MyRHFTenJKWUhRemdoZmo0SC9CN25qNWVtaGU3dDlUZnptNXFzYlVjSlpESzNrc05aRGtwYQp6b09lTzlZd1ZGRldNM0pmT0xHaHllbUcxNnE4WWxibkMveEZYL3JyWm11MmUyNjd3ZVNDM1lWMU1XWWRLTmhJCjFtaEpYVjNIMW5LMzAvWm40Qnh2emJ3T1NVS3BBV3VxUmJPUitoN3JMdm1iUlRLZXhFZHNsN2l5OW5PTGZQcGkKZkxqa3pUSE9keDM5M2ZLY1EzOU5NRjREZWR3ZGIwTjM1b1dEMFZwT1RxUHFOelRxZlgyZzJmb1BnWnpsNG5zRQpQRXFwUUtGWFhHNmN1alNuOHZHa1hZNWREdUR1eUk3WWhhYjRNQ3FMRkd4MEtqQ2NyNjR2ZjNxUzhObHNCOUpuCnlWemJ0dE44ZEpZNmduNU9aZVlNCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
-  tls.key: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcEFJQkFBS0NBUUVBdFkzRTl4NzQ2b2hCUUNqWkNlWEV3ODkzbHF2bW12SFpKeTZHNE85YnNEM2JxNC9ZCkNNYVdPWDFmRngwSzRuQnBDUDVkMFNOTkU2c3lUK2l5eEZmUUlvQXN3cDhyOUlVaVk4NUdvcnRmRVhGdDBNUTYKdVpJZEZUUVJRVlVlekxGMzdEL3ZFS0xuTUJxaitrSExtOFNzb01CTGRtUzV2YVN6OC9pQUN4aHpZWFNyN0E5eApuMGs1ZHhSNGp6KzFnNHdrNUhpbUpkSlhlRW1jZWNSWTk4MDN5L0tEbHBDbHBwVlBlMVY1Ty9RYkR6WDN4TkVMCnFqZXZJRGl1TEpSQkZyaFZNeFp5Y2oybUxqZVJsQmRnSk5kRXd3TW41MExBVElCanU3bitsNVBzdlEvYVo1bGcKMjAwa3BOb05xSTcvZFhrcXlXL1NCUzhldkh3UExzbzNaVmlENlFJREFRQUJBb0lCQUJWeHltc2FHSEt6WjJtcApxWUUyeDVnTllHWEdwalYxRFo1SUs1eFVDWE4yeXdTbnQrL0piU01iUU9rZEFCVWhDL2NJL0pIZ1pwRkZMbXNyCjVEbTIyWm5Kby8vVkJ6OFpucWRGVFNpWmt6QWZRc1plOTBUR0VuTlh0QllRZE5QZXZuaUVVTHVaVWs5blJpa2cKTG1tV3dJRTRWWEdGa2o3cFBtdzUxUDM2aEY1bFUwbkU3L3c4YTNHN2k4aGVicm9wcXJReCtyRlROTGlJcTJvQwpVNndOUlpQUk9TcTE3T0RZN0duY0c1MFpTUXpjQUQxRlFnUEQ4Smt4NWdkU0kweU85QzkxSDIvenZuM3BaQUd2CmwvNC9CZTYvVldwTi9PMkxsS2hJdjVZUVZjVVhNMktqanpIckl3ZWwrWnlCSXhxT3h2TnVvWStOQk9vY1hydFAKUEx5MmhIVUNnWUVBd0VMdHJDdHdaZnhEaFM4Y2c0MTFJNUx0VXdySEFhRU9Tclo3b0k5dWtSWHRteGRzMTZtegpjY1RRbXBndHBkYXVwdjdHeVNNVWdHK2lYb3FjbzFxTktnVjc4RDFJUG5OamZQQitsMTdwWjh0T0RjOERXTE5ZCmJsUCtWMUcySVc4ZXhNT0I1S1FnbTAxMDFlQ0x2b1JrK216a2F5U2Mzd2N4WWlzbzU4TWM0R3NDZ1lFQThiNFgKWExaRnhYeGU4R2JvNitYZlNSWWdjYWNpaktXK3ZuR1ROTDJwSy9NajdkSzlUSmIvaFpZNWpWaGdvTjZLcHdOTgp0dStUZW5OQitUWTNyOFRDTmZxSVFkRFpCQkR5eGR5NUd0d2VlSnNSVktSSjRXRS85aEl5NlJiNWk4TDYweHV0ClZYbFdYMkcvRC9MSUNYNEhxOStlRGMvWjlyZUg5Z01BdCtnOE1mc0NnWUVBcWJVcVNGUmJ0Wm8wRzRiWFc0UHQKQjBhMU9CMEdSdmpjUGJUUWNZektJMFZBNUNxTVI5Mmk2T1M2NGdzOEYrdmxaTUQxeFN1eStDQVNLZk9laWs3dQoxazNhOWRlU1FwWG1GcTNPZ0YwbUdCbU1QNElneVJZZUU5ME9ZQk5mZWltMDlpaEJLd3A1UWJ6Z1NiNFlmRVl2ClFDSUlpazdhTGNBU3BqM0VzTGM0Y1JzQ2dZRUF3dzA4N21xSGkxdlpncUdXU0ZoMnZCTGxaSzZWZXVSMUxsYVgKanhPRS8xZzBZajBLemxSN29iN2Zld09YRzlYVURBUG5YYmFheVU5Y0tRZXRFTjV5VVhsdkhhTzBwc3BDQ0pJYQpyT2gwa1oyVTh6V0lBeGtqc1psbmlKa29DclB0REE4bDRYU0EwMzhiMlhOc0lmU1ZuZ0ZWRnhIaGJXY1NoZFpRCmF4TXdGcWNDZ1lBbmZ5QmlQRXBvSGxVU0tHWm9iM3NCUG1qR0VCK3ovVDI5Y3lyak1SSnRtbXIvQWhvNEVybzIKNUpJUTZGekdxSTJCaEdYbzFqOHgzWjZjR3pTVGx0aU94aHdxb1ErdnZSVnZibmFkMzNObWlIZDkrRXVsZ25iawpTZGNXOXJXTlpIYkpXeHBOZnVyb3dpTnpFMTByRitQS3l2U1lxUnpEbVB2MlpYQ1Y3R1loSUE9PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo=
+  ca.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lSQUtKOS9BRnd6MEd4TTQ2d3FzM1dncHN3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEV4TURnd01URTBOVGxhRncwek1URXhNRFl3TVRFMApOVGxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFERThPcWk5Q1d2VElQU3pxcEFScy92Ty9DM0ZHS0pTK2M1R2tmdXFWbVl1NEFoL1dLWmN1ZmkKeWdJY1dsZEFHVGZFbG82dkFtVUU1V3p0OG1zNWd5dVZBaExjektkb20zTURCTXBNMjFuQ2VCdWRVZWhISjFWLwpGeEtQbmZyNnliL1h0dVRiakxjbFRnNFZLTEd3cW51bHEyY3V0RnQzRnFCS1JITVZYRUJRdC9vOWtHcG5oREVICkVrS3VpUmlOT3I2NS9LRngvYVJLVk1xT2FiekZKbjhka1V0NkFxVDdvWlQvUGVFczg4TytqdlZLWXJSZ3ZkQnoKcG5lbTNBMm4yU2x1NnhtV3NzT1pxWk1aOElXTVhMb2tIN3BXd0tOa1YwSUU4ZkZiY3JXZG5xb3BxejhZVG5PUQprRnlyQ1lyV0Z5QTdRL3N6b1lHNTRaelhLWHZTeWFUZEFnTUJBQUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDCnBEQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVVAyanBtd3hrWVlvWlBMUUMrVjFsbDY1by9NRXdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQUdOY2FFc3E1SitZWG9UVmt6L1RDV2JEMUxobVErUEpVUGIwckRnZzlLU3lvZ2lDR3lkOGpCYnNEdEZPCllXWFRxQkFoeHQ2TUdERzRWRXRvU21nVWJ4SFFzZTY2aWk1VGZ3V0RsZVRqeUhGRURvcWtad0wwTTAyY2Q5WDQKcVZUU3g5TUFRajN6YWhKRUZJT2txclhGY3Y1T2VLUUVYUzkxZWR0RlpXZWFXYUlKS04ydmhSWFhXU1E1dWwrLwpIc3g4T1hvOU1FL0ZVYmtaaldMYWtMb0dpdmhHZmlpN09UZTd2WCtZbFEwVkxhd1RIM1hnYWVkTUFiMW4wc0hoCit2R2xLMXV6NXE0U0UrQnB6cVB0M3prK0hkYktSTkZoMXlBaVVvNHJXZ3NaYXNGZXdiTDhhV1VKUHBYY1RpNzYKZFZmaU5qQmNxWGwzdlV2TnhzUU1NOWtxNzFzPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+  tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURhakNDQWxLZ0F3SUJBZ0lRQU1tSzBmdzlEK2RPQ0lOMjdLeTExakFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNVEV3T0RBeE1UUTFPVm9YRFRNeE1URXdOakF4TVRRMQpPVm93SFRFYk1Ca0dBMVVFQXhNU2EzVnRZUzFqYjI1MGNtOXNMWEJzWVc1bE1JSUJJakFOQmdrcWhraUc5dzBCCkFRRUZBQU9DQVE4QU1JSUJDZ0tDQVFFQXdNaEhVZXpaWk4rWllkaU5iSEtQVnJLWXdNMHpZSWdnMWJJeVRYU0gKUzVaSTJaWGg2OTE1ZUdsamhNbExYMEZVREx5YlJHWGJUS3Q1K3FxTzN6cHNsVVVkUmliRi9MNmRaS3c1Uk9XQgpOOWVQK2xlckFaWGpjM1RXTXBzWFhCMThxMHFYbm5XSmp5WnhQTGxPcUJIOEtwaHQ2UFpvQ2tLSnBiNkRKVHFPCmpNYmQxMmsyZEEzUytEWERJRFJ4ZlRxQ3IrMERoVGd1eTAyaUY4ZHZCQnV0Skl6RnFMZHcxRzNZa1FBV3V0V1IKR252TWFaSnY3RURSOXlsZFpLdmR5RHIwT3A5SmIrRGlEV1J1cE0yZlA5UERWbEV5UkZvMnNobTc4UFVKOUdHZwpPU2NwaGYrK01Qc1R0WDlkRUJXSjFOVkE0Z2x0RHYrMytZTVBvR1AwVk8wT2p3SURBUUFCbzRHd01JR3RNQTRHCkExVWREd0VCL3dRRUF3SUZvREFkQmdOVkhTVUVGakFVQmdnckJnRUZCUWNEQVFZSUt3WUJCUVVIQXdJd0RBWUQKVlIwVEFRSC9CQUl3QURBZkJnTlZIU01FR0RBV2dCUS9hT21iREdSaGloazh0QUw1WFdXWHJtajh3VEJOQmdOVgpIUkVFUmpCRWdoNXJkVzFoTFdOdmJuUnliMnd0Y0d4aGJtVXVhM1Z0WVMxemVYTjBaVzJDSW10MWJXRXRZMjl1CmRISnZiQzF3YkdGdVpTNXJkVzFoTFhONWMzUmxiUzV6ZG1Nd0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFGVUIKVWk2SDZmbWpMVE1uUEJ3U2hLTU5CZlAvcnVoblVxSUkxa1JnZFNKajllTEsyd3pCUFBzaTZJRXZKZlcrM0QwUwp6R3JxaXl0UGZlZmNIMnczYTVFYkV5T1MwcGJMKzEvOGFJMldnSmR1V3pQSlZhMDhheW5kbjlocTRpa3V1TVVXCjdhSkhLWHpqYWV3MTlWZGo2TnA2WE9wT0EybThoc1R5NVlKd3dGNjRSU3lXQ1lsOTlyVnNUdWFNZStXM0F6NXoKMTdLbVdNQ3VqVGY5dWFSUFl4bHJ0QWdwSEk1b0g4a05HN0lSZ0trWmtoWkRSU2thVU8zQnBKS1JseVh0SmloTgpwR1VzbHkzSklkcG9jZ3MwalhERWZFWFova1hYWGJsck9wMFdQdDN4czkyYlhmbkQ2MDRtQjVrS01GdDNsK3RyCm83Mm5HV1I0ZzRqelBXeWg2YUk9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+  tls.key: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb2dJQkFBS0NBUUVBd01oSFVlelpaTitaWWRpTmJIS1BWcktZd00wellJZ2cxYkl5VFhTSFM1WkkyWlhoCjY5MTVlR2xqaE1sTFgwRlVETHliUkdYYlRLdDUrcXFPM3pwc2xVVWRSaWJGL0w2ZFpLdzVST1dCTjllUCtsZXIKQVpYamMzVFdNcHNYWEIxOHEwcVhubldKanlaeFBMbE9xQkg4S3BodDZQWm9Da0tKcGI2REpUcU9qTWJkMTJrMgpkQTNTK0RYRElEUnhmVHFDciswRGhUZ3V5MDJpRjhkdkJCdXRKSXpGcUxkdzFHM1lrUUFXdXRXUkdudk1hWkp2CjdFRFI5eWxkWkt2ZHlEcjBPcDlKYitEaURXUnVwTTJmUDlQRFZsRXlSRm8yc2htNzhQVUo5R0dnT1NjcGhmKysKTVBzVHRYOWRFQldKMU5WQTRnbHREdiszK1lNUG9HUDBWTzBPandJREFRQUJBb0lCQUMxa090N0FYT09TZm1QNgpnRG9qc3pwZnJQWGdteE5FbWk2VzJaOUJLOFlSYWEvSnlic21sNzVSV2p4ZXhSOTFtMXV3WVFLMjFPNzFoVEFQClRycWk0QVE1bE0zNnZTMW9tRmltOElrWFhOaVFLZmR4QXZQSm5oZUdVQlQwVFlqRDdLSE1XMnpWRWdHaHRKSHUKcytXQTdwWDg5QXdoVUpmeDJNVXMyV1kvcG1iZzE1SDVUN1hCZGtQUDAvMXgzSHJlU3NocnhvVE5RQTcxQWZCcwordzFwbzhCRE0yaWV6djVYdmZueWZVdEFZTXBydHVwT3RsNlpXNjNhOVVwOHVXcTdqb1dJRlkwTjhoMkRUUlRUCjQzUmhST1FBWEtPMzd0Z2twVGJPVDBCZ0oxS09US0N2VmVPZjl0L3FCdGJmd2MxelM3YkVYK3RYdGtqdFFGdGIKRHVCRmE5RUNnWUVBMVd5Q0w5ZFF3MitHYnBuRERwUXpCVEpMWUlFZjl6ZlZKQjdsLytYT2RDcVlOTTg3VUxsVQpvWW52QkFuWGp4L2U2SVpubHg5ZzlEODZOOFBrWHdNNkJKQ3A4M3ZFZm9kdUs3TFRNWTdBOURuaytLR0xuL1FDCk9sZlZwM2FyQlcwN2pFbHZCQUVLZjF1d2hxaFhuYmdhNlpvWXB1OC9vSkV4NkxPN3g4Z1B3SWtDZ1lFQTV6MmQKSDJuRmNETCsvNkUwZkYwaE5lQm1IT2pia1FKYlpSejdVclcwK1QxQy9mczk2MTBoaWE4ZGo2OUJkajZ3azdEbgo2V0tXUkxCZ0NoVFBNYzBSRzNHQ1dXYm53elRwdWVqcnJPRGo4QlpoTzJCbmhjVU5MbXpSazZjRUFIOTY0ZHBlCnJyRHBwemN6OE9KdWRpL3J2a0VGWWtZTDBIVklEbGc0TUJRVm9GY0NnWUFTcVBRUS9zQmU5Z2RJOEVTdnA2RjIKV05saVRLZmcwNDdkSTU1MGEwRkx3dFdmK0daMVBsNzU2TGR2SVBVcDNGMSs4eEZua3lURTlpbys2ZSt6cHZLUgpwNXhVWDRQa2xDNjd2MXpidm1GOGVQdGVDYkhOZ0dZWmQ4aUVaY202SmJ6SkhUcUpuUld2NFBKa001L0ZlRzFSCjgxa29iMDZlMlZNRng0RXBqSUprRVFLQmdBb3pXcG9ISlhHRW5tRVNjR2xJQm00RS94d3BYWDR4RjIwSGNVSzkKeDBUelllQW9WQnZzMk16bEQ2M0Y4bUpQODZRZ09xcTk4WmtJR3NSM0ZJakMzZzFTM1lncUZQRTBoVmJ4SW14Vwo0MWMwOVljVUFwMFJDenJRREJLeVhHZlZOOHQ4d1k1OU9XRnArdjJXVDM4aE1Bb05manBPa3JqWVk1eFdZZXdsCkJxc3pBb0dBRUFxQkZDeXBiU1BIQk11ZWo2Y2lUa3VXOWJiWkwvejA0ZnVOOUZtZ2JGTFM4UXR1YkxPckFDN24Kdm8zNURuR2gzZ0NwWW1ia0pEdHF1VHZnUEpjUm1yQXV5bk43L1AyTTFvc0kzTEhQYlQvcTJGYWp3UXAxWXVyaQpFNk9jdGJXS08vZWUyOGd5RFcrcHJyMXJkU3FyYmhMdDZadzdicHZPZVBVM2dsajd0NTQ9Ci0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
 kind: Secret
 metadata:
   labels:
@@ -541,7 +1111,7 @@ spec:
     metadata:
       annotations:
         checksum/config: 003c3e67518c0669b2aa9b652d392cb44ea07d671f5180cc1596fbeb44a7110d
-        checksum/tls-secrets: ba85b10d89ee7106a7cb17298c1fb98d5282dfdb6d5f437e3950bc4a30175a4a
+        checksum/tls-secrets: 02126855e02b5956f1878958670c6e3410e78dde1ea87ce9ef6e8aa5d746595a
       labels:
         app: kuma-control-plane
         app.kubernetes.io/instance: kuma
@@ -896,7 +1466,7 @@ webhooks:
 - admissionReviewVersions:
   - v1beta1
   clientConfig:
-    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRQTQ3WU1DRnBqTDdxVW13SjViaEkrVEFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNVEF3TnpBek1Ua3hNRm9YRFRNeE1UQXdOVEF6TVRreApNRm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQU1kalNwdWI1VXpObk9lakdhbkZ4TDd2dEZWZWFCcGhMblk0T1hSR293dDhZeXhQZUhPa3ByL28KN0JlTXZJNmFxSnVJdmlaZFFQRjRRTUxoV1FpeE94cVhZUlNUQUJZaDY3d1FKQ1JFb0V6TFAzQ3Noc2RDc3FnMApNa25tc1V2VkEzdzNKcjRTMit2NVdHd2JLcjYzVFM3b2hDcXVJQTZySi8zRmd0U0QxQlJCb0NLYkVnMGE1OTZRClFJem1PSXd6azhLRkh0LytPSXd3UCtkV3o3NDJhSncwS2cyMWcrY1pJeEtSRzRMVGVXZmd4empqSFpyUFc1OWoKYnhubUM3Q2FsN1VVdk0zQ2IreEpGbVQwZUFLOVk3K3huZmREWWJxQ1hZTThSRk9VOEtmQzN0QlpsS1dwZkpEUgpRRGZONmk4dWhyeU94MnB1U1hFaWhVNy9EWWhIQU5FQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJReFhFa3ZiSzZxMFNvTDl4bnh5RUdHUkxEV2dqQU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBdjBLbzNpbnJEcnpLWUo2b2crVisvYm54S1g4bDJlR1I0SjJZR3pvZ29rV1AzTkhIaTl4MFM4TE0zT1Q4CmxkVWVmMlFsNXplZ0U5WnQzOVpRUU4yeVRlcDQ4RnkrSkVTMWUyK2xaTUxOT2xwWmlNTWErK2NKclFlUWJsenIKNU5JNmpnS0NnYkFna0RSOU1NVElTU08xYk53L0dwdms1UHNyMmp3dndHdEFDZ0dSZ2N1SEhjU1VOYWJKakdaNApJWDhBWlo2TjFweE9wbmc1eUVydHg4MDRBd1dWdlFoM1NtRDBFcm9pS2NlNVh3YnZaZjYyZ0Z6Vm1STXNrWVNmCldiZXJMVUg2b05xZWNYcVpsZlUyMTJHUGMxSDRYTG1uMFNiTjlkaWZBMEVxay93QW9GTndOZmpVcEVYc09iUVcKU2RwT1BxSlpGclB1TXprR2M4RFBGNnJjRWc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lSQUtKOS9BRnd6MEd4TTQ2d3FzM1dncHN3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEV4TURnd01URTBOVGxhRncwek1URXhNRFl3TVRFMApOVGxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFERThPcWk5Q1d2VElQU3pxcEFScy92Ty9DM0ZHS0pTK2M1R2tmdXFWbVl1NEFoL1dLWmN1ZmkKeWdJY1dsZEFHVGZFbG82dkFtVUU1V3p0OG1zNWd5dVZBaExjektkb20zTURCTXBNMjFuQ2VCdWRVZWhISjFWLwpGeEtQbmZyNnliL1h0dVRiakxjbFRnNFZLTEd3cW51bHEyY3V0RnQzRnFCS1JITVZYRUJRdC9vOWtHcG5oREVICkVrS3VpUmlOT3I2NS9LRngvYVJLVk1xT2FiekZKbjhka1V0NkFxVDdvWlQvUGVFczg4TytqdlZLWXJSZ3ZkQnoKcG5lbTNBMm4yU2x1NnhtV3NzT1pxWk1aOElXTVhMb2tIN3BXd0tOa1YwSUU4ZkZiY3JXZG5xb3BxejhZVG5PUQprRnlyQ1lyV0Z5QTdRL3N6b1lHNTRaelhLWHZTeWFUZEFnTUJBQUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDCnBEQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVVAyanBtd3hrWVlvWlBMUUMrVjFsbDY1by9NRXdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQUdOY2FFc3E1SitZWG9UVmt6L1RDV2JEMUxobVErUEpVUGIwckRnZzlLU3lvZ2lDR3lkOGpCYnNEdEZPCllXWFRxQkFoeHQ2TUdERzRWRXRvU21nVWJ4SFFzZTY2aWk1VGZ3V0RsZVRqeUhGRURvcWtad0wwTTAyY2Q5WDQKcVZUU3g5TUFRajN6YWhKRUZJT2txclhGY3Y1T2VLUUVYUzkxZWR0RlpXZWFXYUlKS04ydmhSWFhXU1E1dWwrLwpIc3g4T1hvOU1FL0ZVYmtaaldMYWtMb0dpdmhHZmlpN09UZTd2WCtZbFEwVkxhd1RIM1hnYWVkTUFiMW4wc0hoCit2R2xLMXV6NXE0U0UrQnB6cVB0M3prK0hkYktSTkZoMXlBaVVvNHJXZ3NaYXNGZXdiTDhhV1VKUHBYY1RpNzYKZFZmaU5qQmNxWGwzdlV2TnhzUU1NOWtxNzFzPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
     service:
       name: kuma-control-plane
       namespace: kuma-system
@@ -917,7 +1487,7 @@ webhooks:
 - admissionReviewVersions:
   - v1beta1
   clientConfig:
-    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRQTQ3WU1DRnBqTDdxVW13SjViaEkrVEFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNVEF3TnpBek1Ua3hNRm9YRFRNeE1UQXdOVEF6TVRreApNRm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQU1kalNwdWI1VXpObk9lakdhbkZ4TDd2dEZWZWFCcGhMblk0T1hSR293dDhZeXhQZUhPa3ByL28KN0JlTXZJNmFxSnVJdmlaZFFQRjRRTUxoV1FpeE94cVhZUlNUQUJZaDY3d1FKQ1JFb0V6TFAzQ3Noc2RDc3FnMApNa25tc1V2VkEzdzNKcjRTMit2NVdHd2JLcjYzVFM3b2hDcXVJQTZySi8zRmd0U0QxQlJCb0NLYkVnMGE1OTZRClFJem1PSXd6azhLRkh0LytPSXd3UCtkV3o3NDJhSncwS2cyMWcrY1pJeEtSRzRMVGVXZmd4empqSFpyUFc1OWoKYnhubUM3Q2FsN1VVdk0zQ2IreEpGbVQwZUFLOVk3K3huZmREWWJxQ1hZTThSRk9VOEtmQzN0QlpsS1dwZkpEUgpRRGZONmk4dWhyeU94MnB1U1hFaWhVNy9EWWhIQU5FQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJReFhFa3ZiSzZxMFNvTDl4bnh5RUdHUkxEV2dqQU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBdjBLbzNpbnJEcnpLWUo2b2crVisvYm54S1g4bDJlR1I0SjJZR3pvZ29rV1AzTkhIaTl4MFM4TE0zT1Q4CmxkVWVmMlFsNXplZ0U5WnQzOVpRUU4yeVRlcDQ4RnkrSkVTMWUyK2xaTUxOT2xwWmlNTWErK2NKclFlUWJsenIKNU5JNmpnS0NnYkFna0RSOU1NVElTU08xYk53L0dwdms1UHNyMmp3dndHdEFDZ0dSZ2N1SEhjU1VOYWJKakdaNApJWDhBWlo2TjFweE9wbmc1eUVydHg4MDRBd1dWdlFoM1NtRDBFcm9pS2NlNVh3YnZaZjYyZ0Z6Vm1STXNrWVNmCldiZXJMVUg2b05xZWNYcVpsZlUyMTJHUGMxSDRYTG1uMFNiTjlkaWZBMEVxay93QW9GTndOZmpVcEVYc09iUVcKU2RwT1BxSlpGclB1TXprR2M4RFBGNnJjRWc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lSQUtKOS9BRnd6MEd4TTQ2d3FzM1dncHN3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEV4TURnd01URTBOVGxhRncwek1URXhNRFl3TVRFMApOVGxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFERThPcWk5Q1d2VElQU3pxcEFScy92Ty9DM0ZHS0pTK2M1R2tmdXFWbVl1NEFoL1dLWmN1ZmkKeWdJY1dsZEFHVGZFbG82dkFtVUU1V3p0OG1zNWd5dVZBaExjektkb20zTURCTXBNMjFuQ2VCdWRVZWhISjFWLwpGeEtQbmZyNnliL1h0dVRiakxjbFRnNFZLTEd3cW51bHEyY3V0RnQzRnFCS1JITVZYRUJRdC9vOWtHcG5oREVICkVrS3VpUmlOT3I2NS9LRngvYVJLVk1xT2FiekZKbjhka1V0NkFxVDdvWlQvUGVFczg4TytqdlZLWXJSZ3ZkQnoKcG5lbTNBMm4yU2x1NnhtV3NzT1pxWk1aOElXTVhMb2tIN3BXd0tOa1YwSUU4ZkZiY3JXZG5xb3BxejhZVG5PUQprRnlyQ1lyV0Z5QTdRL3N6b1lHNTRaelhLWHZTeWFUZEFnTUJBQUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDCnBEQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVVAyanBtd3hrWVlvWlBMUUMrVjFsbDY1by9NRXdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQUdOY2FFc3E1SitZWG9UVmt6L1RDV2JEMUxobVErUEpVUGIwckRnZzlLU3lvZ2lDR3lkOGpCYnNEdEZPCllXWFRxQkFoeHQ2TUdERzRWRXRvU21nVWJ4SFFzZTY2aWk1VGZ3V0RsZVRqeUhGRURvcWtad0wwTTAyY2Q5WDQKcVZUU3g5TUFRajN6YWhKRUZJT2txclhGY3Y1T2VLUUVYUzkxZWR0RlpXZWFXYUlKS04ydmhSWFhXU1E1dWwrLwpIc3g4T1hvOU1FL0ZVYmtaaldMYWtMb0dpdmhHZmlpN09UZTd2WCtZbFEwVkxhd1RIM1hnYWVkTUFiMW4wc0hoCit2R2xLMXV6NXE0U0UrQnB6cVB0M3prK0hkYktSTkZoMXlBaVVvNHJXZ3NaYXNGZXdiTDhhV1VKUHBYY1RpNzYKZFZmaU5qQmNxWGwzdlV2TnhzUU1NOWtxNzFzPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
     service:
       name: kuma-control-plane
       namespace: kuma-system
@@ -948,7 +1518,7 @@ webhooks:
 - admissionReviewVersions:
   - v1beta1
   clientConfig:
-    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRQTQ3WU1DRnBqTDdxVW13SjViaEkrVEFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNVEF3TnpBek1Ua3hNRm9YRFRNeE1UQXdOVEF6TVRreApNRm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQU1kalNwdWI1VXpObk9lakdhbkZ4TDd2dEZWZWFCcGhMblk0T1hSR293dDhZeXhQZUhPa3ByL28KN0JlTXZJNmFxSnVJdmlaZFFQRjRRTUxoV1FpeE94cVhZUlNUQUJZaDY3d1FKQ1JFb0V6TFAzQ3Noc2RDc3FnMApNa25tc1V2VkEzdzNKcjRTMit2NVdHd2JLcjYzVFM3b2hDcXVJQTZySi8zRmd0U0QxQlJCb0NLYkVnMGE1OTZRClFJem1PSXd6azhLRkh0LytPSXd3UCtkV3o3NDJhSncwS2cyMWcrY1pJeEtSRzRMVGVXZmd4empqSFpyUFc1OWoKYnhubUM3Q2FsN1VVdk0zQ2IreEpGbVQwZUFLOVk3K3huZmREWWJxQ1hZTThSRk9VOEtmQzN0QlpsS1dwZkpEUgpRRGZONmk4dWhyeU94MnB1U1hFaWhVNy9EWWhIQU5FQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJReFhFa3ZiSzZxMFNvTDl4bnh5RUdHUkxEV2dqQU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBdjBLbzNpbnJEcnpLWUo2b2crVisvYm54S1g4bDJlR1I0SjJZR3pvZ29rV1AzTkhIaTl4MFM4TE0zT1Q4CmxkVWVmMlFsNXplZ0U5WnQzOVpRUU4yeVRlcDQ4RnkrSkVTMWUyK2xaTUxOT2xwWmlNTWErK2NKclFlUWJsenIKNU5JNmpnS0NnYkFna0RSOU1NVElTU08xYk53L0dwdms1UHNyMmp3dndHdEFDZ0dSZ2N1SEhjU1VOYWJKakdaNApJWDhBWlo2TjFweE9wbmc1eUVydHg4MDRBd1dWdlFoM1NtRDBFcm9pS2NlNVh3YnZaZjYyZ0Z6Vm1STXNrWVNmCldiZXJMVUg2b05xZWNYcVpsZlUyMTJHUGMxSDRYTG1uMFNiTjlkaWZBMEVxay93QW9GTndOZmpVcEVYc09iUVcKU2RwT1BxSlpGclB1TXprR2M4RFBGNnJjRWc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lSQUtKOS9BRnd6MEd4TTQ2d3FzM1dncHN3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEV4TURnd01URTBOVGxhRncwek1URXhNRFl3TVRFMApOVGxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFERThPcWk5Q1d2VElQU3pxcEFScy92Ty9DM0ZHS0pTK2M1R2tmdXFWbVl1NEFoL1dLWmN1ZmkKeWdJY1dsZEFHVGZFbG82dkFtVUU1V3p0OG1zNWd5dVZBaExjektkb20zTURCTXBNMjFuQ2VCdWRVZWhISjFWLwpGeEtQbmZyNnliL1h0dVRiakxjbFRnNFZLTEd3cW51bHEyY3V0RnQzRnFCS1JITVZYRUJRdC9vOWtHcG5oREVICkVrS3VpUmlOT3I2NS9LRngvYVJLVk1xT2FiekZKbjhka1V0NkFxVDdvWlQvUGVFczg4TytqdlZLWXJSZ3ZkQnoKcG5lbTNBMm4yU2x1NnhtV3NzT1pxWk1aOElXTVhMb2tIN3BXd0tOa1YwSUU4ZkZiY3JXZG5xb3BxejhZVG5PUQprRnlyQ1lyV0Z5QTdRL3N6b1lHNTRaelhLWHZTeWFUZEFnTUJBQUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDCnBEQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVVAyanBtd3hrWVlvWlBMUUMrVjFsbDY1by9NRXdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQUdOY2FFc3E1SitZWG9UVmt6L1RDV2JEMUxobVErUEpVUGIwckRnZzlLU3lvZ2lDR3lkOGpCYnNEdEZPCllXWFRxQkFoeHQ2TUdERzRWRXRvU21nVWJ4SFFzZTY2aWk1VGZ3V0RsZVRqeUhGRURvcWtad0wwTTAyY2Q5WDQKcVZUU3g5TUFRajN6YWhKRUZJT2txclhGY3Y1T2VLUUVYUzkxZWR0RlpXZWFXYUlKS04ydmhSWFhXU1E1dWwrLwpIc3g4T1hvOU1FL0ZVYmtaaldMYWtMb0dpdmhHZmlpN09UZTd2WCtZbFEwVkxhd1RIM1hnYWVkTUFiMW4wc0hoCit2R2xLMXV6NXE0U0UrQnB6cVB0M3prK0hkYktSTkZoMXlBaVVvNHJXZ3NaYXNGZXdiTDhhV1VKUHBYY1RpNzYKZFZmaU5qQmNxWGwzdlV2TnhzUU1NOWtxNzFzPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
     service:
       name: kuma-control-plane
       namespace: kuma-system
@@ -981,7 +1551,7 @@ webhooks:
 - admissionReviewVersions:
   - v1beta1
   clientConfig:
-    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRQTQ3WU1DRnBqTDdxVW13SjViaEkrVEFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNVEF3TnpBek1Ua3hNRm9YRFRNeE1UQXdOVEF6TVRreApNRm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQU1kalNwdWI1VXpObk9lakdhbkZ4TDd2dEZWZWFCcGhMblk0T1hSR293dDhZeXhQZUhPa3ByL28KN0JlTXZJNmFxSnVJdmlaZFFQRjRRTUxoV1FpeE94cVhZUlNUQUJZaDY3d1FKQ1JFb0V6TFAzQ3Noc2RDc3FnMApNa25tc1V2VkEzdzNKcjRTMit2NVdHd2JLcjYzVFM3b2hDcXVJQTZySi8zRmd0U0QxQlJCb0NLYkVnMGE1OTZRClFJem1PSXd6azhLRkh0LytPSXd3UCtkV3o3NDJhSncwS2cyMWcrY1pJeEtSRzRMVGVXZmd4empqSFpyUFc1OWoKYnhubUM3Q2FsN1VVdk0zQ2IreEpGbVQwZUFLOVk3K3huZmREWWJxQ1hZTThSRk9VOEtmQzN0QlpsS1dwZkpEUgpRRGZONmk4dWhyeU94MnB1U1hFaWhVNy9EWWhIQU5FQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJReFhFa3ZiSzZxMFNvTDl4bnh5RUdHUkxEV2dqQU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBdjBLbzNpbnJEcnpLWUo2b2crVisvYm54S1g4bDJlR1I0SjJZR3pvZ29rV1AzTkhIaTl4MFM4TE0zT1Q4CmxkVWVmMlFsNXplZ0U5WnQzOVpRUU4yeVRlcDQ4RnkrSkVTMWUyK2xaTUxOT2xwWmlNTWErK2NKclFlUWJsenIKNU5JNmpnS0NnYkFna0RSOU1NVElTU08xYk53L0dwdms1UHNyMmp3dndHdEFDZ0dSZ2N1SEhjU1VOYWJKakdaNApJWDhBWlo2TjFweE9wbmc1eUVydHg4MDRBd1dWdlFoM1NtRDBFcm9pS2NlNVh3YnZaZjYyZ0Z6Vm1STXNrWVNmCldiZXJMVUg2b05xZWNYcVpsZlUyMTJHUGMxSDRYTG1uMFNiTjlkaWZBMEVxay93QW9GTndOZmpVcEVYc09iUVcKU2RwT1BxSlpGclB1TXprR2M4RFBGNnJjRWc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lSQUtKOS9BRnd6MEd4TTQ2d3FzM1dncHN3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEV4TURnd01URTBOVGxhRncwek1URXhNRFl3TVRFMApOVGxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFERThPcWk5Q1d2VElQU3pxcEFScy92Ty9DM0ZHS0pTK2M1R2tmdXFWbVl1NEFoL1dLWmN1ZmkKeWdJY1dsZEFHVGZFbG82dkFtVUU1V3p0OG1zNWd5dVZBaExjektkb20zTURCTXBNMjFuQ2VCdWRVZWhISjFWLwpGeEtQbmZyNnliL1h0dVRiakxjbFRnNFZLTEd3cW51bHEyY3V0RnQzRnFCS1JITVZYRUJRdC9vOWtHcG5oREVICkVrS3VpUmlOT3I2NS9LRngvYVJLVk1xT2FiekZKbjhka1V0NkFxVDdvWlQvUGVFczg4TytqdlZLWXJSZ3ZkQnoKcG5lbTNBMm4yU2x1NnhtV3NzT1pxWk1aOElXTVhMb2tIN3BXd0tOa1YwSUU4ZkZiY3JXZG5xb3BxejhZVG5PUQprRnlyQ1lyV0Z5QTdRL3N6b1lHNTRaelhLWHZTeWFUZEFnTUJBQUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDCnBEQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVVAyanBtd3hrWVlvWlBMUUMrVjFsbDY1by9NRXdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQUdOY2FFc3E1SitZWG9UVmt6L1RDV2JEMUxobVErUEpVUGIwckRnZzlLU3lvZ2lDR3lkOGpCYnNEdEZPCllXWFRxQkFoeHQ2TUdERzRWRXRvU21nVWJ4SFFzZTY2aWk1VGZ3V0RsZVRqeUhGRURvcWtad0wwTTAyY2Q5WDQKcVZUU3g5TUFRajN6YWhKRUZJT2txclhGY3Y1T2VLUUVYUzkxZWR0RlpXZWFXYUlKS04ydmhSWFhXU1E1dWwrLwpIc3g4T1hvOU1FL0ZVYmtaaldMYWtMb0dpdmhHZmlpN09UZTd2WCtZbFEwVkxhd1RIM1hnYWVkTUFiMW4wc0hoCit2R2xLMXV6NXE0U0UrQnB6cVB0M3prK0hkYktSTkZoMXlBaVVvNHJXZ3NaYXNGZXdiTDhhV1VKUHBYY1RpNzYKZFZmaU5qQmNxWGwzdlV2TnhzUU1NOWtxNzFzPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
     service:
       name: kuma-control-plane
       namespace: kuma-system
@@ -1017,7 +1587,7 @@ webhooks:
 - admissionReviewVersions:
   - v1beta1
   clientConfig:
-    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRQTQ3WU1DRnBqTDdxVW13SjViaEkrVEFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNVEF3TnpBek1Ua3hNRm9YRFRNeE1UQXdOVEF6TVRreApNRm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQU1kalNwdWI1VXpObk9lakdhbkZ4TDd2dEZWZWFCcGhMblk0T1hSR293dDhZeXhQZUhPa3ByL28KN0JlTXZJNmFxSnVJdmlaZFFQRjRRTUxoV1FpeE94cVhZUlNUQUJZaDY3d1FKQ1JFb0V6TFAzQ3Noc2RDc3FnMApNa25tc1V2VkEzdzNKcjRTMit2NVdHd2JLcjYzVFM3b2hDcXVJQTZySi8zRmd0U0QxQlJCb0NLYkVnMGE1OTZRClFJem1PSXd6azhLRkh0LytPSXd3UCtkV3o3NDJhSncwS2cyMWcrY1pJeEtSRzRMVGVXZmd4empqSFpyUFc1OWoKYnhubUM3Q2FsN1VVdk0zQ2IreEpGbVQwZUFLOVk3K3huZmREWWJxQ1hZTThSRk9VOEtmQzN0QlpsS1dwZkpEUgpRRGZONmk4dWhyeU94MnB1U1hFaWhVNy9EWWhIQU5FQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJReFhFa3ZiSzZxMFNvTDl4bnh5RUdHUkxEV2dqQU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBdjBLbzNpbnJEcnpLWUo2b2crVisvYm54S1g4bDJlR1I0SjJZR3pvZ29rV1AzTkhIaTl4MFM4TE0zT1Q4CmxkVWVmMlFsNXplZ0U5WnQzOVpRUU4yeVRlcDQ4RnkrSkVTMWUyK2xaTUxOT2xwWmlNTWErK2NKclFlUWJsenIKNU5JNmpnS0NnYkFna0RSOU1NVElTU08xYk53L0dwdms1UHNyMmp3dndHdEFDZ0dSZ2N1SEhjU1VOYWJKakdaNApJWDhBWlo2TjFweE9wbmc1eUVydHg4MDRBd1dWdlFoM1NtRDBFcm9pS2NlNVh3YnZaZjYyZ0Z6Vm1STXNrWVNmCldiZXJMVUg2b05xZWNYcVpsZlUyMTJHUGMxSDRYTG1uMFNiTjlkaWZBMEVxay93QW9GTndOZmpVcEVYc09iUVcKU2RwT1BxSlpGclB1TXprR2M4RFBGNnJjRWc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lSQUtKOS9BRnd6MEd4TTQ2d3FzM1dncHN3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEV4TURnd01URTBOVGxhRncwek1URXhNRFl3TVRFMApOVGxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFERThPcWk5Q1d2VElQU3pxcEFScy92Ty9DM0ZHS0pTK2M1R2tmdXFWbVl1NEFoL1dLWmN1ZmkKeWdJY1dsZEFHVGZFbG82dkFtVUU1V3p0OG1zNWd5dVZBaExjektkb20zTURCTXBNMjFuQ2VCdWRVZWhISjFWLwpGeEtQbmZyNnliL1h0dVRiakxjbFRnNFZLTEd3cW51bHEyY3V0RnQzRnFCS1JITVZYRUJRdC9vOWtHcG5oREVICkVrS3VpUmlOT3I2NS9LRngvYVJLVk1xT2FiekZKbjhka1V0NkFxVDdvWlQvUGVFczg4TytqdlZLWXJSZ3ZkQnoKcG5lbTNBMm4yU2x1NnhtV3NzT1pxWk1aOElXTVhMb2tIN3BXd0tOa1YwSUU4ZkZiY3JXZG5xb3BxejhZVG5PUQprRnlyQ1lyV0Z5QTdRL3N6b1lHNTRaelhLWHZTeWFUZEFnTUJBQUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDCnBEQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVVAyanBtd3hrWVlvWlBMUUMrVjFsbDY1by9NRXdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQUdOY2FFc3E1SitZWG9UVmt6L1RDV2JEMUxobVErUEpVUGIwckRnZzlLU3lvZ2lDR3lkOGpCYnNEdEZPCllXWFRxQkFoeHQ2TUdERzRWRXRvU21nVWJ4SFFzZTY2aWk1VGZ3V0RsZVRqeUhGRURvcWtad0wwTTAyY2Q5WDQKcVZUU3g5TUFRajN6YWhKRUZJT2txclhGY3Y1T2VLUUVYUzkxZWR0RlpXZWFXYUlKS04ydmhSWFhXU1E1dWwrLwpIc3g4T1hvOU1FL0ZVYmtaaldMYWtMb0dpdmhHZmlpN09UZTd2WCtZbFEwVkxhd1RIM1hnYWVkTUFiMW4wc0hoCit2R2xLMXV6NXE0U0UrQnB6cVB0M3prK0hkYktSTkZoMXlBaVVvNHJXZ3NaYXNGZXdiTDhhV1VKUHBYY1RpNzYKZFZmaU5qQmNxWGwzdlV2TnhzUU1NOWtxNzFzPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
     service:
       name: kuma-control-plane
       namespace: kuma-system
@@ -1038,7 +1608,7 @@ webhooks:
 - admissionReviewVersions:
   - v1beta1
   clientConfig:
-    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUREekNDQWZlZ0F3SUJBZ0lRQTQ3WU1DRnBqTDdxVW13SjViaEkrVEFOQmdrcWhraUc5dzBCQVFzRkFEQVMKTVJBd0RnWURWUVFERXdkcmRXMWhMV05oTUI0WERUSXhNVEF3TnpBek1Ua3hNRm9YRFRNeE1UQXdOVEF6TVRreApNRm93RWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDCkFRb0NnZ0VCQU1kalNwdWI1VXpObk9lakdhbkZ4TDd2dEZWZWFCcGhMblk0T1hSR293dDhZeXhQZUhPa3ByL28KN0JlTXZJNmFxSnVJdmlaZFFQRjRRTUxoV1FpeE94cVhZUlNUQUJZaDY3d1FKQ1JFb0V6TFAzQ3Noc2RDc3FnMApNa25tc1V2VkEzdzNKcjRTMit2NVdHd2JLcjYzVFM3b2hDcXVJQTZySi8zRmd0U0QxQlJCb0NLYkVnMGE1OTZRClFJem1PSXd6azhLRkh0LytPSXd3UCtkV3o3NDJhSncwS2cyMWcrY1pJeEtSRzRMVGVXZmd4empqSFpyUFc1OWoKYnhubUM3Q2FsN1VVdk0zQ2IreEpGbVQwZUFLOVk3K3huZmREWWJxQ1hZTThSRk9VOEtmQzN0QlpsS1dwZkpEUgpRRGZONmk4dWhyeU94MnB1U1hFaWhVNy9EWWhIQU5FQ0F3RUFBYU5oTUY4d0RnWURWUjBQQVFIL0JBUURBZ0trCk1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUJCZ2dyQmdFRkJRY0RBakFQQmdOVkhSTUJBZjhFQlRBREFRSC8KTUIwR0ExVWREZ1FXQkJReFhFa3ZiSzZxMFNvTDl4bnh5RUdHUkxEV2dqQU5CZ2txaGtpRzl3MEJBUXNGQUFPQwpBUUVBdjBLbzNpbnJEcnpLWUo2b2crVisvYm54S1g4bDJlR1I0SjJZR3pvZ29rV1AzTkhIaTl4MFM4TE0zT1Q4CmxkVWVmMlFsNXplZ0U5WnQzOVpRUU4yeVRlcDQ4RnkrSkVTMWUyK2xaTUxOT2xwWmlNTWErK2NKclFlUWJsenIKNU5JNmpnS0NnYkFna0RSOU1NVElTU08xYk53L0dwdms1UHNyMmp3dndHdEFDZ0dSZ2N1SEhjU1VOYWJKakdaNApJWDhBWlo2TjFweE9wbmc1eUVydHg4MDRBd1dWdlFoM1NtRDBFcm9pS2NlNVh3YnZaZjYyZ0Z6Vm1STXNrWVNmCldiZXJMVUg2b05xZWNYcVpsZlUyMTJHUGMxSDRYTG1uMFNiTjlkaWZBMEVxay93QW9GTndOZmpVcEVYc09iUVcKU2RwT1BxSlpGclB1TXprR2M4RFBGNnJjRWc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lSQUtKOS9BRnd6MEd4TTQ2d3FzM1dncHN3RFFZSktvWklodmNOQVFFTEJRQXcKRWpFUU1BNEdBMVVFQXhNSGEzVnRZUzFqWVRBZUZ3MHlNVEV4TURnd01URTBOVGxhRncwek1URXhNRFl3TVRFMApOVGxhTUJJeEVEQU9CZ05WQkFNVEIydDFiV0V0WTJFd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3CmdnRUtBb0lCQVFERThPcWk5Q1d2VElQU3pxcEFScy92Ty9DM0ZHS0pTK2M1R2tmdXFWbVl1NEFoL1dLWmN1ZmkKeWdJY1dsZEFHVGZFbG82dkFtVUU1V3p0OG1zNWd5dVZBaExjektkb20zTURCTXBNMjFuQ2VCdWRVZWhISjFWLwpGeEtQbmZyNnliL1h0dVRiakxjbFRnNFZLTEd3cW51bHEyY3V0RnQzRnFCS1JITVZYRUJRdC9vOWtHcG5oREVICkVrS3VpUmlOT3I2NS9LRngvYVJLVk1xT2FiekZKbjhka1V0NkFxVDdvWlQvUGVFczg4TytqdlZLWXJSZ3ZkQnoKcG5lbTNBMm4yU2x1NnhtV3NzT1pxWk1aOElXTVhMb2tIN3BXd0tOa1YwSUU4ZkZiY3JXZG5xb3BxejhZVG5PUQprRnlyQ1lyV0Z5QTdRL3N6b1lHNTRaelhLWHZTeWFUZEFnTUJBQUdqWVRCZk1BNEdBMVVkRHdFQi93UUVBd0lDCnBEQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVVAyanBtd3hrWVlvWlBMUUMrVjFsbDY1by9NRXdEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQUdOY2FFc3E1SitZWG9UVmt6L1RDV2JEMUxobVErUEpVUGIwckRnZzlLU3lvZ2lDR3lkOGpCYnNEdEZPCllXWFRxQkFoeHQ2TUdERzRWRXRvU21nVWJ4SFFzZTY2aWk1VGZ3V0RsZVRqeUhGRURvcWtad0wwTTAyY2Q5WDQKcVZUU3g5TUFRajN6YWhKRUZJT2txclhGY3Y1T2VLUUVYUzkxZWR0RlpXZWFXYUlKS04ydmhSWFhXU1E1dWwrLwpIc3g4T1hvOU1FL0ZVYmtaaldMYWtMb0dpdmhHZmlpN09UZTd2WCtZbFEwVkxhd1RIM1hnYWVkTUFiMW4wc0hoCit2R2xLMXV6NXE0U0UrQnB6cVB0M3prK0hkYktSTkZoMXlBaVVvNHJXZ3NaYXNGZXdiTDhhV1VKUHBYY1RpNzYKZFZmaU5qQmNxWGwzdlV2TnhzUU1NOWtxNzFzPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
     service:
       name: kuma-control-plane
       namespace: kuma-system

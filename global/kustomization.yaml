@@ -4,5 +4,5 @@ kind: Kustomization
 commonAnnotations:
   argocd.argoproj.io/sync-wave: "1"
 
-resources:
-  - kuma.yaml
+bases:
+  - ../upstream-global

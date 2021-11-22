@@ -1,6 +1,8 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -14,6 +16,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "1"
     helm.sh/hook: pre-install
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
   labels:
@@ -29,6 +32,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "1"
     helm.sh/hook: pre-delete
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
   labels:
@@ -44,6 +48,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "1"
     helm.sh/hook: pre-upgrade
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
     helm.sh/hook-weight: "-1"
@@ -58,6 +63,8 @@ metadata:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -96,6 +103,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "1"
     helm.sh/hook: pre-install
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
   labels:
@@ -120,6 +128,8 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -226,6 +236,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "1"
     helm.sh/hook: pre-upgrade
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
     helm.sh/hook-weight: "-1"
@@ -250,6 +261,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "1"
     helm.sh/hook: pre-delete
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
   labels:
@@ -272,6 +284,8 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
   name: kuma-control-plane
   namespace: kuma-system
 roleRef:
@@ -287,6 +301,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "1"
     helm.sh/hook: pre-install
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
   labels:
@@ -309,6 +324,8 @@ subjects:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -329,6 +346,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "1"
     helm.sh/hook: pre-upgrade
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
     helm.sh/hook-weight: "-1"
@@ -352,6 +370,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "1"
     helm.sh/hook: pre-delete
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
   labels:
@@ -378,6 +397,8 @@ data:
     # see conf/kuma-cp.conf.yml for available settings
 kind: ConfigMap
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -410,6 +431,7 @@ data:
 kind: ConfigMap
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "1"
     helm.sh/hook: pre-upgrade
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
     helm.sh/hook-weight: "-1"
@@ -429,6 +451,8 @@ data:
   tls.key: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcEFJQkFBS0NBUUVBdWtPZzZVOCtXOW1ISGpWTXgzVjNZQnVxY1EwbStoSXczUHlVSlhJWStUcGN4eEF6CnBjQ0JQN0owZUFjdFRvM3RteWIxZ1l2aE1EbkExMHdqN2dYVjZCY0hmUzR0N2d6UzFZOWppcUhUd0hPWE91RU0KSEdXRitUMFlBVTYyM1ZQWEs0UUVaUEFqbzdud0dsOVVZSnJkUTQ1VDd6L3FMbjZzUk13aS9vRVBUaVdlbFN5WgpaK0FpRkQxVVo1RW4yTFVlTjRpV00xVm1KeWcxUnZ1UkpIYTVnZDBMcDZYalpkamVmU3czblBsbFAzOWw0TjJUCkwxWjhpSFI3QVprdUh1T3FNSVg4RXZmZHdMUHlQbzhKeXFKN29vM3gyRVI4M3pyNXdMRVc3Z1F4TGlqRWJRVWkKT3U3ZGhNSkxLMk5YeHhoKzhCNVVWMmRjYXNVNXlFUHRIMmgvUHdJREFRQUJBb0lCQVFDQmswQmliYTBNeW5PegpzUko3Z3gwTGI5T1BGNzR3b3V6NUhvQ1UyQjNGYXpOVmk5RFNFdXdXK3JjSk5Menc4ODBDYlFUSEhSOEhwSFdoCmtLZENFeTh1YUs3ZUIzME9LRCtYTDB2cENoQzd4ZTNEbVFFSzFCbHlQR3p4bytlVWFwbTUvUG50bWh6QTdqMjQKcXU2UTBjcnhEeGNXemRqRWhYeWowM3JZbjhHYzgxLzNoYk9zanFpUUJLSkRQVDNtVjJ1U2JlWFQ2NmVDTTd3RApBQ3hLci9NSjJLUkxqV0dGU2Z0TXc4aVBJeFRiSm90QVJ6cXV1ZGJSZmFzai96VDd3UmpWVDE4d2Jhd0ppOWZjCjdVVEtrVk9ZRTRDUHg1bVp5Z3ltNmNOY0lPRWlHRmdOL2MvenplNm9sWEh6WjczeUFZbkg2cVExZGlsSTU2L3YKOXNFQ3VkVUJBb0dCQU92cmNJbHh5S1lVTW1uUkF3RzRHTjB1S0NjeFZWVVhUOUtYWlNKcitmVG1jYjJiNXl5bwpCR3BCWFpPeXZuck5TMUtNMDlWL0JYbmhXbFFKK20zbnZmZ1kzcXdwSXpGZU9kUU9UV3RWNW9xNkxuN1lkM21FCm5WSzFFQlNNMjVZbllVMmhvRWcwUHNZdTNKMXY5cWVyM2lXY0t3Z3haNTBrOCtSaVBJSFV1N2FCQW9HQkFNb2UKT1A0Wkd4eHdGM3RCNHlaekpVT1hwUnI2YkRldkJEQWlYYURKT3ZvV1BiRTRMZTY4MG14MVJEZzJHcDRYRDlEMgp3YkFMVUFILzRXVjdoM1FuSk1XQWJPVWdMNlcyY09EemQwNlRiUVR3dGZhNUtWTHNpZHkrUmJ2TnEzK3JiZWhECmNOdHVtNk5oUXZ1RGtSeURnK2lVTTd4ellvVGFOd0lFQUdVTGd0Vy9Bb0dCQU5LZDRsNFNJdHVCOUcvYmxSK1gKeHpyTzFqSUhMUE5HV0pEZGNBQ0cvU1BTQjRFTENoc245S2tYcWY4TitGZVJwOGtPeUo4MVF5SklPV2dGY0hsbQpCb2JUVFJmTnNnbUU0WU9iTVNxK0NZK1lINkpHaG9NS0RabWs0N0kwL21UU3kxK1BCNVR1YjR4bWtiWk1HcHdlCko3alQ3dWJsbEdjS2NtSldBVWEzTU00QkFvR0FBWHlMYXNNQWdnc0pBUzBRNEoyRUxxVVUzOGZydDlVZnNNTHYKOFZqSmlFRlZudElNOUc2TEZhVWZKVkt3aTIwYi9xdHg3VHVJRVJ1eXFxNW41cURMRW5ESlhENEtXNnVsMU9HMQpoT3hzcHRhbVgvUW9xNlYxdGh2b0kyTjEyWENIVkdmNmtvS1R2blhlcWo3amVGUTNTaVNjNU12c2M1R3ZTZUtCCnBqeVpiNzBDZ1lBNUE1RzF3b3lXdUlLazREZEdJRFZORno5cnVyM3JTV0tyY0MrRnVCNGtVcHdTa2lpYVRiRFgKNzFia0ZNWTZrWUlNc2VJT24wWVl0Z0l0aFF6R3NjVG5lVThpNy9maFdBU1cxTENIK2hyMzRqMlRKbkYydmFZawo4NXYwY2FjZHJyRXNBTDVmMjFDNFpxcGdKeXJQZmJqdE5TYmlGcHQzeFlzVU4vS2M1U3ovbHc9PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo=
 kind: Secret
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -443,6 +467,7 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "1"
     prometheus.io/port: "5680"
     prometheus.io/scrape: "true"
   labels:
@@ -471,7 +496,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  annotations: null
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
   name: kuma-global-zone-sync
   namespace: kuma-system
 spec:
@@ -486,6 +512,8 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
   labels:
     app: kuma-control-plane
     app.kubernetes.io/instance: kuma
@@ -509,6 +537,7 @@ spec:
   template:
     metadata:
       annotations:
+        argocd.argoproj.io/sync-wave: "1"
         checksum/config: 003c3e67518c0669b2aa9b652d392cb44ea07d671f5180cc1596fbeb44a7110d
         checksum/tls-secrets: 5132427bc41d0c7f7e6a3da7515629d10930cb5c3098b56a47a28480d48e82c5
       labels:
@@ -596,6 +625,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "1"
     helm.sh/hook: pre-delete
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
     helm.sh/hook-weight: "5"
@@ -610,6 +640,8 @@ metadata:
 spec:
   template:
     metadata:
+      annotations:
+        argocd.argoproj.io/sync-wave: "1"
       labels:
         app.kubernetes.io/instance: kuma
         app.kubernetes.io/managed-by: Helm
@@ -636,6 +668,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "1"
     helm.sh/hook: pre-upgrade
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
   labels:
@@ -649,6 +682,8 @@ metadata:
 spec:
   template:
     metadata:
+      annotations:
+        argocd.argoproj.io/sync-wave: "1"
       labels:
         app.kubernetes.io/instance: kuma
         app.kubernetes.io/managed-by: Helm
@@ -697,6 +732,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "1"
     helm.sh/hook: pre-install
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
     helm.sh/hook-weight: "5"
@@ -711,6 +747,8 @@ metadata:
 spec:
   template:
     metadata:
+      annotations:
+        argocd.argoproj.io/sync-wave: "1"
       labels:
         app.kubernetes.io/instance: kuma
         app.kubernetes.io/managed-by: Helm
@@ -740,6 +778,8 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: MutatingWebhookConfiguration
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -825,6 +865,8 @@ webhooks:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm

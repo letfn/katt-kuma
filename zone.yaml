@@ -1,6 +1,8 @@
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: circuitbreakers.kuma.io
 spec:
@@ -27,6 +29,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: dataplaneinsights.kuma.io
 spec:
@@ -53,6 +57,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: dataplanes.kuma.io
 spec:
@@ -79,6 +85,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: externalservices.kuma.io
 spec:
@@ -104,6 +112,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: faultinjections.kuma.io
 spec:
@@ -130,6 +140,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: healthchecks.kuma.io
 spec:
@@ -156,6 +168,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: meshes.kuma.io
 spec:
@@ -180,6 +194,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: meshinsights.kuma.io
 spec:
@@ -206,6 +222,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: proxytemplates.kuma.io
 spec:
@@ -232,6 +250,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: ratelimits.kuma.io
 spec:
@@ -258,6 +278,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: retries.kuma.io
 spec:
@@ -284,6 +306,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: serviceinsights.kuma.io
 spec:
@@ -310,6 +334,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: timeouts.kuma.io
 spec:
@@ -336,6 +362,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: trafficlogs.kuma.io
 spec:
@@ -362,6 +390,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: trafficpermissions.kuma.io
 spec:
@@ -388,6 +418,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: trafficroutes.kuma.io
 spec:
@@ -414,6 +446,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: traffictraces.kuma.io
 spec:
@@ -440,6 +474,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: virtualoutbounds.kuma.io
 spec:
@@ -466,6 +502,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: zoneingresses.kuma.io
 spec:
@@ -492,6 +530,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: zoneingressinsights.kuma.io
 spec:
@@ -519,6 +559,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: zoneinsights.kuma.io
 spec:
@@ -545,6 +587,8 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   creationTimestamp: null
   name: zones.kuma.io
 spec:
@@ -571,6 +615,8 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -583,6 +629,8 @@ metadata:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -596,6 +644,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "2"
     helm.sh/hook: pre-install
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
   labels:
@@ -611,6 +660,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "2"
     helm.sh/hook: pre-delete
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
   labels:
@@ -626,6 +676,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "2"
     helm.sh/hook: pre-upgrade
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
     helm.sh/hook-weight: "-1"
@@ -640,6 +691,8 @@ metadata:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -678,6 +731,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "2"
     helm.sh/hook: pre-install
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
   labels:
@@ -702,6 +756,8 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -812,6 +868,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "2"
     helm.sh/hook: pre-upgrade
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
     helm.sh/hook-weight: "-1"
@@ -836,6 +893,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "2"
     helm.sh/hook: pre-delete
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
   labels:
@@ -858,6 +916,8 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   name: kuma-control-plane
   namespace: kuma-system
 roleRef:
@@ -873,6 +933,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "2"
     helm.sh/hook: pre-install
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
   labels:
@@ -895,6 +956,8 @@ subjects:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -915,6 +978,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "2"
     helm.sh/hook: pre-upgrade
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
     helm.sh/hook-weight: "-1"
@@ -938,6 +1002,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "2"
     helm.sh/hook: pre-delete
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
   labels:
@@ -964,6 +1029,8 @@ data:
     # see conf/kuma-cp.conf.yml for available settings
 kind: ConfigMap
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -996,6 +1063,7 @@ data:
 kind: ConfigMap
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "2"
     helm.sh/hook: pre-upgrade
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
     helm.sh/hook-weight: "-1"
@@ -1015,6 +1083,8 @@ data:
   tls.key: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb2dJQkFBS0NBUUVBd01oSFVlelpaTitaWWRpTmJIS1BWcktZd00wellJZ2cxYkl5VFhTSFM1WkkyWlhoCjY5MTVlR2xqaE1sTFgwRlVETHliUkdYYlRLdDUrcXFPM3pwc2xVVWRSaWJGL0w2ZFpLdzVST1dCTjllUCtsZXIKQVpYamMzVFdNcHNYWEIxOHEwcVhubldKanlaeFBMbE9xQkg4S3BodDZQWm9Da0tKcGI2REpUcU9qTWJkMTJrMgpkQTNTK0RYRElEUnhmVHFDciswRGhUZ3V5MDJpRjhkdkJCdXRKSXpGcUxkdzFHM1lrUUFXdXRXUkdudk1hWkp2CjdFRFI5eWxkWkt2ZHlEcjBPcDlKYitEaURXUnVwTTJmUDlQRFZsRXlSRm8yc2htNzhQVUo5R0dnT1NjcGhmKysKTVBzVHRYOWRFQldKMU5WQTRnbHREdiszK1lNUG9HUDBWTzBPandJREFRQUJBb0lCQUMxa090N0FYT09TZm1QNgpnRG9qc3pwZnJQWGdteE5FbWk2VzJaOUJLOFlSYWEvSnlic21sNzVSV2p4ZXhSOTFtMXV3WVFLMjFPNzFoVEFQClRycWk0QVE1bE0zNnZTMW9tRmltOElrWFhOaVFLZmR4QXZQSm5oZUdVQlQwVFlqRDdLSE1XMnpWRWdHaHRKSHUKcytXQTdwWDg5QXdoVUpmeDJNVXMyV1kvcG1iZzE1SDVUN1hCZGtQUDAvMXgzSHJlU3NocnhvVE5RQTcxQWZCcwordzFwbzhCRE0yaWV6djVYdmZueWZVdEFZTXBydHVwT3RsNlpXNjNhOVVwOHVXcTdqb1dJRlkwTjhoMkRUUlRUCjQzUmhST1FBWEtPMzd0Z2twVGJPVDBCZ0oxS09US0N2VmVPZjl0L3FCdGJmd2MxelM3YkVYK3RYdGtqdFFGdGIKRHVCRmE5RUNnWUVBMVd5Q0w5ZFF3MitHYnBuRERwUXpCVEpMWUlFZjl6ZlZKQjdsLytYT2RDcVlOTTg3VUxsVQpvWW52QkFuWGp4L2U2SVpubHg5ZzlEODZOOFBrWHdNNkJKQ3A4M3ZFZm9kdUs3TFRNWTdBOURuaytLR0xuL1FDCk9sZlZwM2FyQlcwN2pFbHZCQUVLZjF1d2hxaFhuYmdhNlpvWXB1OC9vSkV4NkxPN3g4Z1B3SWtDZ1lFQTV6MmQKSDJuRmNETCsvNkUwZkYwaE5lQm1IT2pia1FKYlpSejdVclcwK1QxQy9mczk2MTBoaWE4ZGo2OUJkajZ3azdEbgo2V0tXUkxCZ0NoVFBNYzBSRzNHQ1dXYm53elRwdWVqcnJPRGo4QlpoTzJCbmhjVU5MbXpSazZjRUFIOTY0ZHBlCnJyRHBwemN6OE9KdWRpL3J2a0VGWWtZTDBIVklEbGc0TUJRVm9GY0NnWUFTcVBRUS9zQmU5Z2RJOEVTdnA2RjIKV05saVRLZmcwNDdkSTU1MGEwRkx3dFdmK0daMVBsNzU2TGR2SVBVcDNGMSs4eEZua3lURTlpbys2ZSt6cHZLUgpwNXhVWDRQa2xDNjd2MXpidm1GOGVQdGVDYkhOZ0dZWmQ4aUVaY202SmJ6SkhUcUpuUld2NFBKa001L0ZlRzFSCjgxa29iMDZlMlZNRng0RXBqSUprRVFLQmdBb3pXcG9ISlhHRW5tRVNjR2xJQm00RS94d3BYWDR4RjIwSGNVSzkKeDBUelllQW9WQnZzMk16bEQ2M0Y4bUpQODZRZ09xcTk4WmtJR3NSM0ZJakMzZzFTM1lncUZQRTBoVmJ4SW14Vwo0MWMwOVljVUFwMFJDenJRREJLeVhHZlZOOHQ4d1k1OU9XRnArdjJXVDM4aE1Bb05manBPa3JqWVk1eFdZZXdsCkJxc3pBb0dBRUFxQkZDeXBiU1BIQk11ZWo2Y2lUa3VXOWJiWkwvejA0ZnVOOUZtZ2JGTFM4UXR1YkxPckFDN24Kdm8zNURuR2gzZ0NwWW1ia0pEdHF1VHZnUEpjUm1yQXV5bk43L1AyTTFvc0kzTEhQYlQvcTJGYWp3UXAxWXVyaQpFNk9jdGJXS08vZWUyOGd5RFcrcHJyMXJkU3FyYmhMdDZadzdicHZPZVBVM2dsajd0NTQ9Ci0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
 kind: Secret
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -1029,6 +1099,7 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "2"
     prometheus.io/port: "5680"
     prometheus.io/scrape: "true"
   labels:
@@ -1064,7 +1135,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  annotations: null
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -1087,6 +1159,8 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     app: kuma-control-plane
     app.kubernetes.io/instance: kuma
@@ -1110,6 +1184,7 @@ spec:
   template:
     metadata:
       annotations:
+        argocd.argoproj.io/sync-wave: "2"
         checksum/config: 003c3e67518c0669b2aa9b652d392cb44ea07d671f5180cc1596fbeb44a7110d
         checksum/tls-secrets: 02126855e02b5956f1878958670c6e3410e78dde1ea87ce9ef6e8aa5d746595a
       labels:
@@ -1203,6 +1278,8 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     app: kuma-ingress
     app.kubernetes.io/instance: kuma
@@ -1226,6 +1303,7 @@ spec:
   template:
     metadata:
       annotations:
+        argocd.argoproj.io/sync-wave: "2"
         kuma.io/ingress: enabled
       labels:
         app: kuma-ingress
@@ -1310,6 +1388,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "2"
     helm.sh/hook: pre-delete
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
     helm.sh/hook-weight: "5"
@@ -1324,6 +1403,8 @@ metadata:
 spec:
   template:
     metadata:
+      annotations:
+        argocd.argoproj.io/sync-wave: "2"
       labels:
         app.kubernetes.io/instance: kuma
         app.kubernetes.io/managed-by: Helm
@@ -1350,6 +1431,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "2"
     helm.sh/hook: pre-upgrade
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
   labels:
@@ -1363,6 +1445,8 @@ metadata:
 spec:
   template:
     metadata:
+      annotations:
+        argocd.argoproj.io/sync-wave: "2"
       labels:
         app.kubernetes.io/instance: kuma
         app.kubernetes.io/managed-by: Helm
@@ -1411,6 +1495,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   annotations:
+    argocd.argoproj.io/sync-wave: "2"
     helm.sh/hook: pre-install
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded,hook-failed
     helm.sh/hook-weight: "5"
@@ -1425,6 +1510,8 @@ metadata:
 spec:
   template:
     metadata:
+      annotations:
+        argocd.argoproj.io/sync-wave: "2"
       labels:
         app.kubernetes.io/instance: kuma
         app.kubernetes.io/managed-by: Helm
@@ -1454,6 +1541,8 @@ spec:
 apiVersion: admissionregistration.k8s.io/v1
 kind: MutatingWebhookConfiguration
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm
@@ -1539,6 +1628,8 @@ webhooks:
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     app.kubernetes.io/instance: kuma
     app.kubernetes.io/managed-by: Helm

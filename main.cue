@@ -8,7 +8,7 @@ repo: boot.#Repo & {
 	repo_name:     "katt-kuma"
 	chart_repo:    "https://kumahq.github.io/charts"
 	chart_name:    "kuma"
-	chart_version: "0.7.1"
+	chart_version: "0.8.0"
 	install:       "kuma"
 	namespace:     "kuma-system"
 	variants: {
